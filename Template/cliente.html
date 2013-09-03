@@ -12,20 +12,21 @@
 	<body>
 		<h1 id="head">SGC - Sistema de Gerenciamento de Clientes</h1>
 		<ul id="navigation">
-			<li><span class="active">Overview</span></li>
-			<li><a href="#">News</a></li>
-			<li><a href="#">Users</a></li>
+			<li><a href="dashboard.html">Home</a></li>
+			<li><a href="login.html">Login</a></li>
+			<li><span class="active">Clientes</span></li>
+			<li><a href="#">Cadastro</a></li>
 		</ul>
 			<div id="content" class="container_16 clearfix">
 				<div class="grid_4">
 					<p>
-						<label>Username<small>Alpha-numeric values</small></label>
+						<label>Cliente <small>nome ou CPF/CNPJ</small></label>
 						<input type="text" />
 					</p>
 				</div>
 				<div class="grid_5">
 					<p>
-						<label>Email Address</label>
+						<label>Endereço de email</label>
 						<input type="text" />
 					</p>
 				</div>
@@ -50,9 +51,9 @@
 					<table>
 						<thead>
 							<tr>
-								<th>Username</th>
-								<th>Manager</th>
-								<th>Department</th>
+								<th>Nome ou CPF/CNPJ</th>
+								<th>Processo</th>
+								<th>Andamento</th>
 								<th colspan="2" width="10%">Actions</th>
 							</tr>
 						</thead>
@@ -66,101 +67,101 @@
 						<tbody>
 							<tr>
 								<td>Philip</td>
-								<td>Claire</td>
-								<td>Development</td>
-								<td><a href="#" class="edit">Edit</a></td>
-								<td><a href="#" class="delete">Delete</a></td>
+								<td>Judicíario</td>
+								<td>Aguardando Finalização</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
 							</tr>
 							<tr class="alt">
 								<td>Thomas</td>
-								<td>Philip</td>
-								<td>Marketing</td>
-								<td><a href="#" class="edit">Edit</a></td>
-								<td><a href="#" class="delete">Delete</a></td>
+								<td>Previdenciário</td>
+								<td>Em análise</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
 							</tr>
 							<tr>
 								<td>Ben</td>
-								<td>Thomas</td>
-								<td>Marketing</td>
-								<td><a href="#" class="edit">Edit</a></td>
-								<td><a href="#" class="delete">Delete</a></td>
+								<td>Previdenciário</td>
+								<td>Aguardando Benefício</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
 							</tr>
 							<tr class="alt">
 								<td>Richard</td>
-								<td>Ben</td>
-								<td>Development</td>
-								<td><a href="#" class="edit">Edit</a></td>
-								<td><a href="#" class="delete">Delete</a></td>
+								<td>Cívil</td>
+								<td>Parado</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
 							</tr>
 							<tr>
 								<td>Alon</td>
-								<td>Richard</td>
-								<td>Development</td>
-								<td><a href="#" class="edit">Edit</a></td>
-								<td><a href="#" class="delete">Delete</a></td>
+								<td>Trabalhista</td>
+								<td>Aguardando</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
 							</tr>
 							<tr class="alt">
 								<td>Alex</td>
-								<td>Alon</td>
-								<td>IT</td>
-								<td><a href="#" class="edit">Edit</a></td>
-								<td><a href="#" class="delete">Delete</a></td>
+								<td>Trabalhista</td>
+								<td>Cancelado</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
 							</tr>
 							<tr>
 								<td>Nathan</td>
-								<td>Alex</td>
-								<td>IT</td>
-								<td><a href="#" class="edit">Edit</a></td>
-								<td><a href="#" class="delete">Delete</a></td>
+								<td>Previdencíario</td>
+								<td>Finalizado</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
 							</tr>
 							<tr class="alt">
 								<td>Habib</td>
-								<td>Nathan</td>
-								<td>Design</td>
-								<td><a href="#" class="edit">Edit</a></td>
-								<td><a href="#" class="delete">Delete</a></td>
+								<td>Previdencíario</td>
+								<td>Finalizado</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
 							</tr>
 							<tr>
 								<td>Jeremy</td>
-								<td>Habib</td>
-								<td>Design</td>
-								<td><a href="#" class="edit">Edit</a></td>
-								<td><a href="#" class="delete">Delete</a></td>
+								<td>Trabalhista</td>
+								<td>Finalizado</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
 							</tr>
 							<tr class="alt">
 								<td>Ed</td>
-								<td>Jeremy</td>
-								<td>Design</td>
-								<td><a href="#" class="edit">Edit</a></td>
-								<td><a href="#" class="delete">Delete</a></td>
+								<td>Cívil</td>
+								<td>Finalizado</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
 							</tr>
 							<tr class="alt">
 								<td>Claire</td>
-								<td>Ed</td>
-								<td>Development</td>
-								<td><a href="#" class="edit">Edit</a></td>
-								<td><a href="#" class="delete">Delete</a></td>
+								<td>Previdencíario</td>
+								<td>Finalizado</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
 							</tr>
 							<tr>
 								<td>Philip</td>
-								<td>Tom</td>
-								<td>Development</td>
-								<td><a href="#" class="edit">Edit</a></td>
-								<td><a href="#" class="delete">Delete</a></td>
+								<td>Previdencíario</td>
+								<td>Finalizado</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
 							</tr>
 							<tr class="alt">
 								<td>Thomas</td>
-								<td>Claire</td>
-								<td>Marketing</td>
-								<td><a href="#" class="edit">Edit</a></td>
-								<td><a href="#" class="delete">Delete</a></td>
+								<td>Previdencíario</td>
+								<td>Finalizado</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
 							</tr>
 							<tr>
 								<td>Ben</td>
-								<td>Thomas</td>
-								<td>Marketing</td>
-								<td><a href="#" class="edit">Edit</a></td>
-								<td><a href="#" class="delete">Delete</a></td>
+								<td>Trabalhista</td>
+								<td>Concedido</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
 							</tr>
 						</tbody>
 					</table>
