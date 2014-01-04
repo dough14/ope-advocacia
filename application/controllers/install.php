@@ -1,7 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Install extends CI_Controller {
-}
 	/**
 	 * Index Page for this controller.
 	 *
@@ -19,7 +18,7 @@ class Install extends CI_Controller {
 	 */
 	public function index(){
 		$data = array();
-	 
+
 		// Check if users are already there
 		$this->load->model('user_model');
 		$users = $this->user_model->get();
@@ -34,8 +33,8 @@ class Install extends CI_Controller {
 	 
 		$data['login'] = '';
 		$data['password'] = '';
-	 
-		$this->load->view('login', $data);
+
+        $this->template->show('login', $data);
 	}
 	
 	public function run(){
@@ -46,7 +45,7 @@ class Install extends CI_Controller {
 			$insert = array(
 				'login' => $this->input->post('login'),
 				'password' => $this->input->post('password'),
-				'level' => $this->user_model->USER_LEVEL_ADMIN
+				'level' => $this->user_model->USER_LEVEL_ADM
 			);
 			$this->user_model->create($insert);
 		}
@@ -56,10 +55,7 @@ class Install extends CI_Controller {
 	 
 		$data['login'] = '';
 		$data['password'] = '';
-	 
-		$this->load->view('login', $data);
+
+        $this->template->show('login', $data);
 	}
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/install.php */

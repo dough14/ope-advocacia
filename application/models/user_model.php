@@ -1,8 +1,9 @@
 <?php
 class User_model extends CI_Model {
     private $salt = 'xVjaD2M3aTzr3tCSR3Tp';
-    public $USER_LEVEL_ADMIN = 1;
-    public $USER_LEVEL_ADVG = 2;
+    //user levels
+    public $USER_LEVEL_ADM = 1;
+    public $USER_LEVEL_ADV = 2;
     public $USER_LEVEL_ATD = 3;
     public $USER_LEVEL_AJU = 4;
 
@@ -12,13 +13,27 @@ class User_model extends CI_Model {
 		$get = $this->db->get('user');
 		if($id) return $get->row_array();
 		if($get->num_rows > 0) return $get->result_array();
+
 		return array();
 	}
 	
 	public function create($data){
-	$data['password'] = sha1($data['password'].$this->salt);
-	return $this->db->insert('user', $data);
+
+        $data['password'] = sha1($data['password'].$this->salt);
+
+        return $this->db->insert('user', $data);
 	}
-	
-	
+
+    public function validate($login, $password){
+
+        $this->db->where('login', $login)->where('password', sha1($password.$this->salt));
+
+        $get = $this->db->get('user');
+
+        if($get->num_rows > 0){
+            return $get->row_array();
+        }
+
+        return array();
+    }
 }

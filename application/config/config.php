@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/moreiraogi/';
+$config['base_url']	= 'http://localhost/ope-advocacia/';
 
 /*
 |--------------------------------------------------------------------------
