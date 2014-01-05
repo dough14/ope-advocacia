@@ -50,7 +50,9 @@ $this->template->menu('users');
         </tr>
         <tr>
             <td colspan="2">
-                <?php if (isset($id)) echo form_hidden('id', $id); ?>
+                <?php if (isset($id)){
+                    echo form_hidden('id', $id);
+                } ?>
                 <div class="form-save-buttons">
                     <?php echo form_submit('save', 'Salvar', 'class="btn-blue"'); ?>
                     <?php echo form_button('cancel', 'Cancelar', 'class="btn-blue" onClick="history.go(-1)"'); ?>

@@ -21,10 +21,13 @@
 <div id="menu">
     <ul id="navigation">
         <!--<li><span class="active">Login</span></li>-->
-        <li><a href="dashboard.html">Home</a></li>
-        <li><a href="cliente.html">Clientes</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-        <?php echo anchor('user', 'Funcionários', 'class="btn btn_logout"'); ?>
-        <?php echo anchor('login/logout', 'Logout', 'class="btn btn_logout"'); ?>
+        <?php //if($view == 'dashboard') { ?>
+            <li><?php echo anchor('dashboard', 'Home'); ?></li>
+            <li><?php echo anchor('user', 'Editar Usuarios'); ?></li>
+        <?php //} elseif($view == 'users') { ?>
+            <li><?php echo anchor('user', 'Funcionários', 'class="btn btn_logout"'); ?></li>
+            <li><?php echo anchor('user/add', 'Adicionar funcionario'); ?></li>
+        <?php //} ?>
+        <li><?php echo anchor('login/logout', 'Logout', 'class="btn btn_logout"'); ?></li>
     </ul>
 </div>

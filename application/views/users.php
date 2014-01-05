@@ -45,9 +45,10 @@ $this->template->menu('users');
         <table>
             <thead>
             <tr>
-                <th>Nome ou CPF/CNPJ</th>
-                <th>Processo</th>
-                <th>Andamento</th>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Nível de acesso</th>
+                <th>Data de cadastro</th>
                 <th colspan="2" width="10%">Ações</th>
             </tr>
             </thead>

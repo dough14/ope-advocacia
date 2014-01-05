@@ -53,7 +53,7 @@ class User extends CI_Controller {
         $data = $this->user_model->get($id);
 
         $data['password'] = '';
-        $data['page_title']  = "Editar Usuario #".$id;
+        $data['page_title']  = "Editar Usuario #".$data['login'];
 
         $data['level_list'] = $this->LEVEL;
 
