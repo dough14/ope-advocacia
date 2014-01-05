@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>SGC</title>
+		<link rel="stylesheet" href="css/960.css" type="text/css" media="screen" charset="utf-8" />
+		<!--<link rel="stylesheet" href="css/fluid.css" type="text/css" media="screen" charset="utf-8" />-->
+		<link rel="stylesheet" href="css/template.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="css/colour.css" type="text/css" media="screen" charset="utf-8" />
+	</head>
+	<body>
+		<h1 id="head">SGC - Sistema de Gerenciamento de Clientes</h1>
+		<ul id="navigation">
+			<li><a href="dashboard.html">Home</a></li>
+			<li><a href="login.html">Login</a></li>
+			<li><span class="active">Clientes</span></li>
+			<li><a href="cadastro.html">Cadastro</a></li>
+		</ul>
+			<div id="content" class="container_16 clearfix">
+				<div class="grid_4">
+					<p>
+						<label>Cliente <small>nome ou CPF/CNPJ</small></label>
+						<input type="text" />
+					</p>
+				</div>
+				<div class="grid_5">
+					<p>
+						<label>Endereço de email</label>
+						<input type="text" />
+					</p>
+				</div>
+				<div class="grid_5">
+					<p>
+						<label>Tipo de processo</label>
+						<select>
+							<option>Judiciário</option>
+							<option>Previdenciário</option>
+							<option>Cívil</option>
+							<option>Trabalhista</option>
+						</select>
+					</p>
+				</div>
+				<div class="grid_2">
+					<p>
+						<label>&nbsp;</label>
+						<input type="submit" value="Search" />
+					</p>
+				</div>
+				<div class="grid_16">
+					<table>
+						<thead>
+							<tr>
+								<th>Nome ou CPF/CNPJ</th>
+								<th>Processo</th>
+								<th>Andamento</th>
+								<th colspan="2" width="10%">Ações</th>
+							</tr>
+						</thead>
+						<tfoot>
+							<tr>
+								<td colspan="5" class="pagination">
+									<span class="active curved">1</span><a href="#" class="curved">2</a><a href="#" class="curved">3</a><a href="#" class="curved">4</a> ... <a href="#" class="curved">10 million</a>
+								</td>
+							</tr>
+						</tfoot>
+						<tbody>
+							<tr>
+								<td>Philip</td>
+								<td>Judicíario</td>
+								<td>Aguardando Finalização</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
+							</tr>
+							<tr class="alt">
+								<td>Thomas</td>
+								<td>Previdenciário</td>
+								<td>Em análise</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
+							</tr>
+							<tr>
+								<td>Ben</td>
+								<td>Previdenciário</td>
+								<td>Aguardando Benefício</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
+							</tr>
+							<tr class="alt">
+								<td>Richard</td>
+								<td>Cívil</td>
+								<td>Parado</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
+							</tr>
+							<tr>
+								<td>Alon</td>
+								<td>Trabalhista</td>
+								<td>Aguardando</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
+							</tr>
+							<tr class="alt">
+								<td>Alex</td>
+								<td>Trabalhista</td>
+								<td>Cancelado</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
+							</tr>
+							<tr>
+								<td>Nathan</td>
+								<td>Previdencíario</td>
+								<td>Finalizado</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
+							</tr>
+							<tr class="alt">
+								<td>Habib</td>
+								<td>Previdencíario</td>
+								<td>Finalizado</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
+							</tr>
+							<tr>
+								<td>Jeremy</td>
+								<td>Trabalhista</td>
+								<td>Finalizado</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
+							</tr>
+							<tr class="alt">
+								<td>Ed</td>
+								<td>Cívil</td>
+								<td>Finalizado</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
+							</tr>
+							<tr class="alt">
+								<td>Claire</td>
+								<td>Previdencíario</td>
+								<td>Finalizado</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
+							</tr>
+							<tr>
+								<td>Philip</td>
+								<td>Previdencíario</td>
+								<td>Finalizado</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
+							</tr>
+							<tr class="alt">
+								<td>Thomas</td>
+								<td>Previdencíario</td>
+								<td>Finalizado</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
+							</tr>
+							<tr>
+								<td>Ben</td>
+								<td>Trabalhista</td>
+								<td>Concedido</td>
+								<td><a href="#" class="edit">Editar</a></td>
+								<td><a href="#" class="delete">Deletar</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		<div id="foot">
+			<div class="container_16 clearfix">
+				<div class="grid_16">
+					<a href="#">SGC - Sistema de Gerenciamento de Clientes</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

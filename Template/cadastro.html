@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>SGC</title>
+		<link rel="stylesheet" href="css/960.css" type="text/css" media="screen" charset="utf-8" />
+		<!--<link rel="stylesheet" href="css/fluid.css" type="text/css" media="screen" charset="utf-8" />-->
+		<link rel="stylesheet" href="css/template.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="css/colour.css" type="text/css" media="screen" charset="utf-8" />
+		<script type="text/javascript" src="js/jquery-1.2.6.pack.js"></script>
+		<script type="text/javascript" src="js/jquery.maskedinput-1.1.4.pack.js"/></script>
+	</head>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#cpf").mask("999.999.999-99");
+		});
+		$(document).ready(function(){
+			$("#cnpj").mask("99.999.999/9999-99");
+		});
+	</script>
+	<body>
+		<h1 id="head">SGC - Sistema de Gerenciamento de Clientes</h1>
+		<ul id="navigation">
+			<li><a href="dashboard.html">Home</a></li>
+			<li><a href="login.html">Login</a></li>
+			<li><a href="cliente.html">Clientes</a></li>
+			<li><span class="active">Cadastro</a></li>
+		</ul>
+		<div id="content" class="container_16 clearfix">
+			<div class="grid_11">
+				<h2>Cadastro de Clientes</h2>
+				<div class="grid_4">
+					<p>
+						<label>Nome completo</label>
+						<input type="text"  style="width:220px;"/>
+					</p>
+				</div>
+				<div class="grid_6">
+					<p>
+						<label>CPF</label>
+						<input type="text"name="cpf" type="text" id="cpf"  style="width:220px;"/>
+						<input type="submit" value="Cadastrar"/>
+					</p>
+				</div>
+			</div>
+			<div class="grid_11">
+				<div class="grid_4">
+					<label>Nome da empresa</label>
+					<input type="text"  style="width:220px;"/>
+				</div>
+				<div class="grid_6">
+					<label>CNPJ</label>
+					<input type="text"name="cnpj" type="text" id="cnpj"  style="width:220px;"/>
+					<input type="submit" value="Cadastrar"/>					
+				</div>
+			</div>
+		</div>
+		<div id="foot">
+			<div class="container_16 clearfix">
+				<div class="grid_16">
+					<a href="#">SGC - Sistema de Gerenciamento de Clientes</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
