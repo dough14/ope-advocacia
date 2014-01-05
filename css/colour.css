@@ -1,11 +1,11 @@
 body {
-	background:#F7F4E9 url(body.png) repeat-x top center;
+	background:#FFFAFA;
 }
 small {
 	color:#888
 }
 
-th,#navigation,.active,input[type=submit],.pagination a:hover,.date td a:hover {
+th,#navigation,.active,input[type=submit],.pagination a:hover,.date td a:hover, button {
 	background:#434A48;
 	color:#fff
 }
@@ -20,11 +20,11 @@ tr {
 	background-position:0 1px;
 }
 
-.active, th, #head, #navigation a, input[type=submit] {
+.active, th, #head, #navigation a, input[type=submit], button {
 	color:#fff;
 }
 
-input, select, textarea {
+input, select, textarea, button {
 	border-color:#ddd
 }
 

@@ -80,7 +80,7 @@ caption {
 
 /* Typography */
 
-label, #navigation, .error, .success, input[type="submit"], input[type="reset"]  {
+label, #navigation, .error, .success, input[type="submit"], input[type="reset"], button  {
 	font-weight:bold;
 }
 
@@ -187,7 +187,7 @@ small {
 	padding-left:10px;
 }
 
-input, textarea, select{
+input, textarea, select, button{
 	border:1px solid;
 	font-family:inherit;
 	font-size:inherit;
@@ -199,7 +199,7 @@ select {
 	padding-bottom:3px;
 }
 
-input[type="submit"], input[type="reset"] {
+input[type="submit"], input[type="reset"], button {
 	cursor:pointer;
 	width:auto !important;
 }
