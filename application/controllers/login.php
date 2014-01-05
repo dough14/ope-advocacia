@@ -19,6 +19,26 @@ class Login extends CI_Controller {
         $this->template->show('login', $data);
     }
 
+    /*public function login(){
+        $usuario = $this->input->post('login');
+        $senha = $this->input->post('password');
+        $this->db->where('login',$usuario);
+        $this->db->where('password',$senha);
+        //$this->db->where('ativo',1);
+        $usuario = $this->db->get('users')->result();
+        if(count($usuario)===1){
+            $dados = array(
+                'user'  => $usuario[0]->usuario,
+                'logged' => TRUE
+            );
+            $this->session->set_userdata($dados);
+            redirect('dashboard');
+        }
+        else{
+            $this->template->show('login');
+        }
+    }*/
+
     public function validate(){
         $this->load->model('user_model');
         $result = $this->user_model->validate($this->input->post('login'),$this->input->post('password'));
