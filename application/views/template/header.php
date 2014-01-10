@@ -15,10 +15,14 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <title>SGC<?php if (isset($page_title)) { echo ' | '.$page_title; } ?></title>
 
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css" type="text/css" media="screen" charset="utf-8" />
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/960.css" type="text/css" media="screen" charset="utf-8" />
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/template.css" type="text/css" media="screen" charset="utf-8" />
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/colour.css" type="text/css" media="screen" charset="utf-8" />
     <!--[if IE]><![if gte IE 6]><![endif]-->
+    <script src="<?php echo base_url(); ?>js/jquery-1.2.6.pack.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.maskedinput-1.1.4.pack.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>js/scripts.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>js/glow/1.7.0/core/core.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>js/glow/1.7.0/widgets/widgets.js" type="text/javascript"></script>
     <link href="<?php echo base_url(); ?>js/glow/1.7.0/widgets/widgets.css" type="text/css" rel="stylesheet" />

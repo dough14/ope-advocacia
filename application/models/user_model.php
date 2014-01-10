@@ -42,7 +42,7 @@ class User_model extends CI_Model {
             $data['password'] = sha1($data['password'].$this->salt);
         }
         $this->db->where('id', $id);
-        $update = $this->db->update('users', $data);
+        $update = $this->db->update('user', $data);
 
         return $update;
     }

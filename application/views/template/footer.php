@@ -7,6 +7,9 @@
  */
 ?>
 
-
-</body>
+        <div id="dialog-confirm" style="display:none;" title="Are you sure?">
+            <p><span></span>Esta ação não pode ser desfeita.</p>
+            <p>Você tem certeza disso?</p>
+        </div>
+    </body>
 </html>

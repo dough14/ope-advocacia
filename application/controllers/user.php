@@ -16,7 +16,7 @@ class User extends CI_Controller {
             redirect('login');
 
         $this->LEVEL = array(
-            1 => 'Administrador - acesso total',
+            1 => 'Administrador - Acesso total',
             2 => 'Advogado - Acesso ao seu perfil',
             3 => 'Atendente - Acesso a todas agendas',
             4 => 'Ajudante - Acesso a todas agendas'

@@ -41,12 +41,12 @@ $this->template->menu('users');
         </p>
     </div>
     <div class="grid_16">
-        <?php if(isset($users)) { ?>
+        <?php if(isset($users)) : ?>
         <table>
             <thead>
             <tr>
                 <th>ID</th>
-                <th>Email</th>
+                <th>Login</th>
                 <th>Nível de acesso</th>
                 <th>Data de cadastro</th>
                 <th colspan="2" width="10%">Ações</th>
@@ -60,10 +60,10 @@ $this->template->menu('users');
             </tr>
             </tfoot>
             <tbody>
-            <?php foreach ($users as $user) { ?>
+            <?php foreach ($users as $user) : ?>
                 <tr id="user_<?php echo $user['id']; ?>">
                     <td><?php echo $user['id']; ?></td>
-                    <td><?php echo $user['email']; ?></td>
+                    <td><?php echo $user['login']; ?></td>
                     <td><?php echo $level_list[$user['level']]; ?></td>
                     <td><?php echo date("j/M/Y, g:i a", strtotime($user['date_created'])); ?></td>
                     <td>
@@ -71,9 +71,9 @@ $this->template->menu('users');
                         <?php echo anchor('user/remove/'.$user['id'], 'Deletar', 'class="remove-user-event delete"'); ?>
                     </td>
                 </tr>
-            <?php } ?>
+            <?php endforeach ?>
             </tbody>
         </table>
-        <?php } ?>
+        <?php endif ?>
     </div>
 </div>
