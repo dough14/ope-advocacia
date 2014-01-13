@@ -23,7 +23,8 @@
         <!--<li><span class="active">Login</span></li>-->
         <?php //if($view == 'dashboard') { ?>
             <li><?php echo anchor('dashboard', 'Home'); ?></li>
-            <li><?php echo anchor('user', 'Editar Usuarios'); ?></li>
+            <li><?php echo anchor('cliente', 'Clientes'); ?></li>
+            <li><?php echo anchor('cliente/add', 'Adicionar Cliente'); ?></li>
         <?php //} elseif($view == 'users') { ?>
             <li><?php echo anchor('user', 'Funcionários', 'class="btn btn_logout"'); ?></li>
             <li><?php echo anchor('user/add', 'Adicionar funcionario'); ?></li>
