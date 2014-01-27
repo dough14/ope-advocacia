@@ -41,7 +41,7 @@ $this->template->menu('clientes');
         </p>
     </div>
     <div class="grid_16">
-        <?php if(isset($users)) : ?>
+        <?php if(isset($clientes)) : ?>
         <table>
             <thead>
             <tr>
@@ -69,8 +69,8 @@ $this->template->menu('clientes');
                     <td><?php echo $cliente['data_nasc']; ?></td>
                     <td><?php echo date("j/M/Y, g:i a", strtotime($cliente['date_created'])); ?></td>
                     <td>
-                        <?php echo anchor('user/edit/'.$cliente['id'],'Editar', 'class="edit"'); ?>
-                        <?php echo anchor('user/remove/'.$cliente['id'], 'Deletar', 'class="remove-user-event delete"'); ?>
+                        <?php echo anchor('cliente/edit/'.$cliente['id'],'Editar', 'class="edit"'); ?>
+                        <?php echo anchor('cliente/remove/'.$cliente['id'], 'Deletar', 'class="remove-user-event delete"'); ?>
                     </td>
                 </tr>
             <?php endforeach ?>

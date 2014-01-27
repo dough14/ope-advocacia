@@ -47,6 +47,26 @@ $this->template->menu('clientes');
         <tr>
             <div class="grid_5">
                 <td>
+                    <?php echo form_label('Telefone Comercial', 'tel2'); ?>
+                </td>
+                <td>
+                    <?php echo form_input('tel2', $tel2); ?>
+                </td>
+            </div>
+        </tr>
+        <tr>
+            <div class="grid_5">
+                <td>
+                    <?php echo form_label('Celular', 'cel'); ?>
+                </td>
+                <td>
+                    <?php echo form_input('cel', $cel); ?>
+                </td>
+            </div>
+        </tr>
+        <tr>
+            <div class="grid_5">
+                <td>
                     <?php echo form_label('Data de Nascimento', 'data_nasc'); ?>
                 </td>
                 <td>
@@ -56,10 +76,10 @@ $this->template->menu('clientes');
         </tr>
         <tr>
             <td>
-                <?php echo form_label('Level', 'level'); ?>
+                <?php echo form_label('Processos', 'tipos_processo'); ?>
             </td>
             <td>
-                <?php echo form_dropdown('level', $level_list, $level); ?>
+                <?php echo form_dropdown('tipos_processo', $tipos_processo, 'Civil'); ?>
             </td>
         </tr>
         <tr>

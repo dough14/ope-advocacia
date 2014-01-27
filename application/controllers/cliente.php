@@ -9,17 +9,16 @@
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Cliente extends CI_Controller {
-    private $LEVEL;
-    function User() {
+    private $tiposProcesso;
+    function Cliente() {
         parent::__construct();
         if(!$this->session->userdata('logged'))
             redirect('login');
 
-        $this->LEVEL = array(
-            1 => 'Administrador - Acesso total',
-            2 => 'Advogado - Acesso ao seu perfil',
-            3 => 'Atendente - Acesso a todas agendas',
-            4 => 'Ajudante - Acesso a todas agendas'
+        $this->tiposProcesso = array(
+            1 => 'Civil',
+            2 => 'Previdenciario',
+            3 => 'Trabalhista',
         );
     }
 
@@ -27,7 +26,7 @@ class Cliente extends CI_Controller {
         // Load open transports
         $this->load->model('cliente_model');
         $data['clientes'] = $this->cliente_model->get(false);
-        $data['level_list'] = $this->LEVEL;
+        $data['tipos_processo'] = $this->tiposProcesso;
 
         $data['page_title']  = "Clientes";
 
@@ -38,30 +37,33 @@ class Cliente extends CI_Controller {
     public function add(){
         //TODO
 
-        $data['page_title']  = "Novo Cliente";
-        $data['nome']    = '';
-        $data['cpf']    = '';
-        $data['tel'] = '';
-        $data['data_nasc'] = '';
-        $data['level']    = '1';
-        $data['level_list'] = $this->LEVEL;
+        $data['page_title']     = "Novo Cliente";
+        $data['nome']           = '';
+        $data['cpf']            = '';
+        $data['tel']            = '';
+        $data['tel2']           = '';
+        $data['cel']            = '';
+        $data['data_nasc']      = '';
+        $data['processos']      = '1';
+        $data['tipos_processo']  = $this->tiposProcesso;
+
 
         $this->template->show('clientes_add', $data);
     }
 
     public function edit($id){
         $this->load->model('cliente_model');
-        $data = $this->user_model->get($id);
+        $data = $this->cliente_model->get($id);
 
         $data['page_title']  = "Editar Cliente #".$data['nome'];
-        $data['level_list'] = $this->LEVEL;
+        $data['tipos_processo'] = $this->tiposProcesso;
 
         $this->template->show('clientes_add', $data);
     }
 
     public function remove($id){
         $this->load->model('cliente_model');
-        $this->user_model->delete($id);
+        $this->cliente_model->delete($id);
 
         redirect('cliente');
     }
@@ -69,12 +71,19 @@ class Cliente extends CI_Controller {
     public function save(){
         $this->load->model('cliente_model');
 
+        $data_nasc = $this->input->post('data_nasc');
+        $data_nasc = date('Y-m-d', strtotime(str_replace('-', '/', $data_nasc)));
+        //echo $data_nasc.'<br>';
+
+
         $sql_data = array(
             'nome'    => $this->input->post('nome'),
             'cpf'    => $this->input->post('cpf'),
             'tel'    => $this->input->post('tel'),
-            'data_nasc'    => $this->input->post('data_nasc'),
-            'level'    => $this->input->post('level')
+            'tel2'    => $this->input->post('tel2'),
+            'cel'    => $this->input->post('cel'),
+            'data_nasc'    =>  $data_nasc,
+            'tipos_processo'    => $this->input->post('tipos_processo')
         );
 
 
