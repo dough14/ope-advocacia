@@ -98,4 +98,3 @@ class Cliente extends CI_Controller {
 }
 
 ?>
-
