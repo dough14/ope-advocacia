@@ -66,8 +66,8 @@ $this->template->menu('clientes');
                     <td><?php echo $cliente['id']; ?></td>
                     <td><?php echo $cliente['nome']; ?></td>
                     <td><?php echo $cliente['cpf']; ?></td>
-                    <td><?php echo $cliente['data_nasc']; ?></td>
-                    <td><?php echo date("j/M/Y, g:i a", strtotime($cliente['date_created'])); ?></td>
+                    <td><?php echo date("j/m/Y, g:i a", strtotime($cliente['data_nasc'])); ?></td>
+                    <td><?php echo date("j/m/Y, g:i a", strtotime($cliente['date_created'])); ?></td>
                     <td>
                         <?php echo anchor('cliente/edit/'.$cliente['id'],'Editar', 'class="edit"'); ?>
                         <?php echo anchor('cliente/remove/'.$cliente['id'], 'Deletar', 'class="remove-user-event delete"'); ?>

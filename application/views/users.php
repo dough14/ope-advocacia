@@ -65,7 +65,7 @@ $this->template->menu('users');
                     <td><?php echo $user['id']; ?></td>
                     <td><?php echo $user['login']; ?></td>
                     <td><?php echo $level_list[$user['level']]; ?></td>
-                    <td><?php echo date("j/M/Y, g:i a", strtotime($user['date_created'])); ?></td>
+                    <td><?php echo date("j/m/Y, g:i a", strtotime($user['date_created'])); ?></td>
                     <td>
                         <?php echo anchor('user/edit/'.$user['id'],'Editar', 'class="edit"'); ?>
                         <?php echo anchor('user/remove/'.$user['id'], 'Deletar', 'class="remove-user-event delete"'); ?>
