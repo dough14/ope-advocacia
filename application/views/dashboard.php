@@ -7,6 +7,7 @@
  */
 //load menu
 $this->template->menu('dashboard');
+$this->load->model('calendar_model');
 ?>
 
 
@@ -140,82 +141,37 @@ $this->template->menu('dashboard');
     </div>
     <div class="box">
         <h2>Agenda</h2>
-        <div class="utils">
-            <a href="#">Veja Mais</a>
-        </div>
-        <table class="date">
-            <caption><a href="#">Anterior</a> Setembro 2013 <a href="#">Próximo</a> </caption>
-            <thead>
-            <tr>
-                <th>Seg</th>
-                <th>Ter</th>
-                <th>Qua</th>
-                <th>Qui</th>
-                <th>Sex</th>
-                <th>Sab</th>
-                <th>Dom</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><a href="#">1</a></td>
-            </tr>
-            <tr>
-                <td><a href="#">2</a></td>
-                <td><a href="#" class="active">3</a></td>
-                <td><a href="#">4</a></td>
-                <td><a href="#">5</a></td>
-                <td><a href="#">6</a></td>
-                <td><a href="#">7</a></td>
-                <td><a href="#">8</a></td>
-            </tr>
-            <tr>
-                <td><a href="#">9</a></td>
-                <td><a href="#">10</a></td>
-                <td><a href="#">11</a></td>
-                <td><a href="#">12</a></td>
-                <td><a href="#">13</a></td>
-                <td><a href="#">14</a></td>
-                <td><a href="#">15</a></td>
-            </tr>
-            <tr>
-                <td><a href="#">16</a></td>
-                <td><a href="#">17</a></td>
-                <td><a href="#">18</a></td>
-                <td><a href="#">19</a></td>
-                <td><a href="#">20</a></td>
-                <td><a href="#">21</a></td>
-                <td><a href="#">22</a></td>
-            </tr>
-            <tr>
-                <td><a href="#">23</a></td>
-                <td><a href="#">24</a></td>
-                <td><a href="#">25</a></td>
-                <td><a href="#">26</a></td>
-                <td><a href="#">27</a></td>
-                <td><a href="#">28</a></td>
-                <td><a href="#">29</a></td>
-            </tr>
-            <tr>
-                <td><a href="#">30</a></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            </tbody>
-        </table>
-        <ol>
-            <li>Nenhum evento hoje.</li>
-        </ol>
+        <div id="calendar"></div>
+        <script type="text/javascript">
+            <?php //var_dump($this) ?>
+            jQuery('document').ready(function(){
+                jQuery('#calendar').fullCalendar({
+                    events: [
+                        <?php foreach( $this->events as $event ): ?>
+                        <?php
+                            $startDate = new DateTime($event->start);
+                            $_startMonth = new DateInterval('P1M');
+                            $startDate->sub($_startMonth);
+                            $_startMonth = $startDate->format('m');
+                        ?>
+                        {
+                            title: '<?php echo $event->title ?>',
+                            start: new Date(<?php echo $startDate->format('Y') ?>, <?php echo $_startMonth == 12 ? 0 : $_startMonth ?>, <?php echo $startDate->format('d') ?>)
+                            <?php if( !empty($event->end) ): ?>
+                            <?php
+                                $endDate   = new DateTime($event->end);
+                                $_endMonth = new DateInterval('P1M');
+                                $endDate->sub($_endMonth);
+                                $_endMonth = $endDate->format('m');
+                            ?>
+                            end: new Date(<?php echo $endDate->format('Y') ?>, <?php echo $_endMonth == 12 ? 0 : $_endMonth ?>, <?php echo $endDate->format('d') ?>)
+                            <?php endif ?>
+                        },
+                        <?php endforeach ?>
+                    ]
+                });
+            });
+        </script>
     </div>
 </div>
 </div>

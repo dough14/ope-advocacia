@@ -37,6 +37,16 @@ $this->template->menu('clientes');
         <tr>
             <div class="grid_5">
                 <td>
+                    <?php echo form_label('Data de Nascimento', 'data_nasc'); ?>
+                </td>
+                <td>
+                    <?php echo form_input('data_nasc', $data_nasc); ?>
+                </td>
+            </div>
+        </tr>
+        <tr>
+            <div class="grid_5">
+                <td>
                     <?php echo form_label('Telefone', 'tel'); ?>
                 </td>
                 <td>
@@ -67,10 +77,30 @@ $this->template->menu('clientes');
         <tr>
             <div class="grid_5">
                 <td>
-                    <?php echo form_label('Data de Nascimento', 'data_nasc'); ?>
+                    <?php echo form_label('Endereço', 'endereco'); ?>
                 </td>
                 <td>
-                    <?php echo form_input('data_nasc', $data_nasc); ?>
+                    <?php echo form_input('endereco', $endereco); ?>
+                </td>
+            </div>
+        </tr>
+        <tr>
+            <div class="grid_5">
+                <td>
+                    <?php echo form_label('CEP', 'cep'); ?>
+                </td>
+                <td>
+                    <?php echo form_input('cep', $cep); ?>
+                </td>
+            </div>
+        </tr>
+        <tr>
+            <div class="grid_5">
+                <td>
+                    <?php echo form_label('UF', 'uf'); ?>
+                </td>
+                <td>
+                    <?php echo form_input('uf', $uf); ?>
                 </td>
             </div>
         </tr>

@@ -32,7 +32,7 @@ class Cliente_model extends CI_Model {
 
         return $update;
     }
-
+/*TODO delete changing the flag status*/
     public function delete($id){
         $this->db->where('id', $id);
         $this->db->delete('cliente');

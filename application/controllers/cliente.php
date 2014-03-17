@@ -44,6 +44,9 @@ class Cliente extends CI_Controller {
         $data['tel2']           = '';
         $data['cel']            = '';
         $data['data_nasc']      = '';
+        $data['endereco']       = '';
+        $data['cep']            = '';
+        $data['uf']             = '';
         $data['processos']      = '1';
         $data['tipos_processo']  = $this->tiposProcesso;
 
@@ -75,15 +78,18 @@ class Cliente extends CI_Controller {
         $data_nasc = date('Y-m-d', strtotime(str_replace('-', '/', $data_nasc)));
         //echo $data_nasc.'<br>';
 
-
+/*terminar de arrumar o save*/
         $sql_data = array(
-            'nome'    => $this->input->post('nome'),
-            'cpf'    => $this->input->post('cpf'),
-            'tel'    => $this->input->post('tel'),
-            'tel2'    => $this->input->post('tel2'),
-            'cel'    => $this->input->post('cel'),
-            'data_nasc'    =>  $data_nasc,
-            'tipos_processo'    => $this->input->post('tipos_processo')
+            'nome'               => $this->input->post('nome'),
+            'cpf'                => $this->input->post('cpf'),
+            'tel'                => $this->input->post('tel'),
+            'tel2'               => $this->input->post('tel2'),
+            'cel'                => $this->input->post('cel'),
+            'endereco'           => $this->input->post('endereco'),
+            'cep'                => $this->input->post('cep'),
+            'uf'                => $this->input->post('uf'),
+            'data_nasc'          =>  $data_nasc,
+            'tipos_processo'     => $this->input->post('tipos_processo')
         );
 
 
