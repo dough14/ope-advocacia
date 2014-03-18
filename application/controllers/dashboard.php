@@ -20,10 +20,21 @@ class Dashboard extends CI_Controller {
 
     public function index(){
         $data['page_title']  = "Dashboard";
-
+       // $this->load->model('calendar_model');
         // Load View
         $this->template->show('dashboard', $data);
+
     }
+
+    public function calendar(){
+
+       /* $events  = array(
+            $get = $this->db->get('calendar')
+        );
+        */
+        $this->calendar_model->getCalendar();
+    }
+
 
 }
 

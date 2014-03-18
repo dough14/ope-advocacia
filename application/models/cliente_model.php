@@ -14,7 +14,7 @@ class Cliente_model extends CI_Model {
 	}
 	
 	public function create($data){
-        $this->db->insert('cliente', $data);
+        //$this->db->insert('cliente', $data);
         //$this->db->_compile_select();
         //echo $this->db->last_query();
         //exit;

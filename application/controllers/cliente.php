@@ -78,7 +78,6 @@ class Cliente extends CI_Controller {
         $data_nasc = date('Y-m-d', strtotime(str_replace('-', '/', $data_nasc)));
         //echo $data_nasc.'<br>';
 
-/*terminar de arrumar o save*/
         $sql_data = array(
             'nome'               => $this->input->post('nome'),
             'cpf'                => $this->input->post('cpf'),
@@ -87,7 +86,7 @@ class Cliente extends CI_Controller {
             'cel'                => $this->input->post('cel'),
             'endereco'           => $this->input->post('endereco'),
             'cep'                => $this->input->post('cep'),
-            'uf'                => $this->input->post('uf'),
+            'uf'                 => $this->input->post('uf'),
             'data_nasc'          =>  $data_nasc,
             'tipos_processo'     => $this->input->post('tipos_processo')
         );

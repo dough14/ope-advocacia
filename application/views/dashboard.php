@@ -7,7 +7,7 @@
  */
 //load menu
 $this->template->menu('dashboard');
-$this->load->model('calendar_model');
+
 ?>
 
 
@@ -143,7 +143,7 @@ $this->load->model('calendar_model');
         <h2>Agenda</h2>
         <div id="calendar"></div>
         <script type="text/javascript">
-            <?php //var_dump($this) ?>
+            <?php print_r($this->calendar->events);exit; ?>
             jQuery('document').ready(function(){
                 jQuery('#calendar').fullCalendar({
                     events: [
