@@ -7,9 +7,10 @@
  */
 //load menu
 $this->template->menu('dashboard');
-
+//var_dump($events);exit;
+//$this->model('calendar_model');
 ?>
-
+<?php //var_dump($this->row);exit; ?>
 
 <div id="content" class="container_16 clearfix">
 <div class="grid_5">
@@ -139,27 +140,28 @@ $this->template->menu('dashboard');
             </tbody>
         </table>
     </div>
+</div>
+<div class="grid_6">
     <div class="box">
         <h2>Agenda</h2>
-        <div id="calendar"></div>
+
         <script type="text/javascript">
-            <?php print_r($this->calendar->events);exit; ?>
             jQuery('document').ready(function(){
                 jQuery('#calendar').fullCalendar({
                     events: [
-                        <?php foreach( $this->events as $event ): ?>
+                        <?php foreach( $events as $event ): ?>
                         <?php
-                            $startDate = new DateTime($event->start);
+                            $startDate = new DateTime($event->startDate);
                             $_startMonth = new DateInterval('P1M');
                             $startDate->sub($_startMonth);
                             $_startMonth = $startDate->format('m');
                         ?>
                         {
                             title: '<?php echo $event->title ?>',
-                            start: new Date(<?php echo $startDate->format('Y') ?>, <?php echo $_startMonth == 12 ? 0 : $_startMonth ?>, <?php echo $startDate->format('d') ?>)
-                            <?php if( !empty($event->end) ): ?>
+                            start: new Date(<?php echo $startDate->format('Y') ?>, <?php echo $_startMonth == 12 ? 0 : $_startMonth ?>, <?php echo $startDate->format('d') ?>),
+                            <?php if( !empty($event->endDate) ): ?>
                             <?php
-                                $endDate   = new DateTime($event->end);
+                                $endDate   = new DateTime($event->endDate);
                                 $_endMonth = new DateInterval('P1M');
                                 $endDate->sub($_endMonth);
                                 $_endMonth = $endDate->format('m');
@@ -168,10 +170,36 @@ $this->template->menu('dashboard');
                             <?php endif ?>
                         },
                         <?php endforeach ?>
-                    ]
+                    ],
+                    titleFormat: {
+                        month: 'MMM yyyy',
+                        day: 'd MMM'
+                    },
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        //right: 'month,agendaWeek,agendaDay'
+                        right: 'month,agendaDay'
+                    },
+                    timeFormat: {
+                        agenda: 'h(:mm)t{ - h(:mm)t}',
+                        '': 'h(:mm)t{-h(:mm)t }'
+                    },
+                    monthNames: ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" ],
+                    monthNamesShort: ['Jan','Fev','Mar','Abr','Maio','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+                    dayNames: [ 'Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+                    dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'],
+                    buttonText: {
+                        today: 'Hoje',
+                        month: 'Mês',
+                        week: 'Semana',
+                        day: 'Dia'
+                    },
+                    allDayText: 'Dia Inteiro'
                 });
             });
         </script>
+        <div id="calendar"></div>
     </div>
 </div>
 </div>

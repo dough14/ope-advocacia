@@ -19,7 +19,10 @@ class Dashboard extends CI_Controller {
     }
 
     public function index(){
+
+        $this->load->model('calendar_model');
         $data['page_title']  = "Dashboard";
+        $data['events']      =  $this->calendar_model->calendar();
        // $this->load->model('calendar_model');
         // Load View
         $this->template->show('dashboard', $data);
@@ -27,12 +30,12 @@ class Dashboard extends CI_Controller {
     }
 
     public function calendar(){
+       // var_dump($this->model('calendar_model'));exit;
 
-       /* $events  = array(
-            $get = $this->db->get('calendar')
-        );
-        */
-        $this->calendar_model->getCalendar();
+
+
+        $this->events = $this->calendar_model();
+
     }
 
 

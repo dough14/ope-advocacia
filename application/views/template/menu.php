@@ -27,6 +27,7 @@
             <li><?php echo anchor('user', 'Funcionários', 'class="btn btn_logout"'); ?></li>
             <li><?php echo anchor('user/add', 'Adicionar funcionario'); ?></li>
         <?php //} ?>
+        <li><?php echo anchor('calendar', 'Calendário'); ?></li>
         <li><?php echo anchor('login/logout', 'Logout', 'class="btn btn_logout"'); ?></li>
     </ul>
 </div>
