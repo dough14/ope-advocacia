@@ -8,12 +8,6 @@ application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
 
-<<<<<<< HEAD
-.idea
-.idea/*
-=======
 #Mr Developer
 .mr.developer.cfg
 .idea
-.idea/*
->>>>>>> c75a5d9191515eb3be3d344142a664be1e69c9b1
