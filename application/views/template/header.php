@@ -7,43 +7,45 @@
  */
 ?>
 
+<!DOCTYPE html>
+<!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.3 Author: ClipTheme -->
+<!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- start: HEAD -->
 <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <title>SGC<?php if (isset($page_title)) { echo ' | '.$page_title; } ?></title>
-
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css" type="text/css" media="screen" charset="utf-8" />
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/960.css" type="text/css" media="screen" charset="utf-8" />
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/template.css" type="text/css" media="screen" charset="utf-8" />
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/colour.css" type="text/css" media="screen" charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/fullcalendar.css" media="all" />
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/fullcalendar.print.css" media="print" />
-    <!--[if IE]><![if gte IE 6]><![endif]-->
-    <script src="<?php echo base_url(); ?>js/jquery-1.11.0.min.js" type="text/javascript"></script>
-    <script src="<?php echo base_url(); ?>js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-    <script src="<?php echo base_url(); ?>js/jquery-ui-1.10.4.custom.min.js"></script>
-    <script src="<?php echo base_url(); ?>js/fullcalendar.min.js"></script>
-    <script src="<?php echo base_url(); ?>js/jquery.maskedinput-1.1.4.pack.js" type="text/javascript"></script>
-    <script src="<?php echo base_url(); ?>js/scripts.js" type="text/javascript"></script>
-    <script src="<?php echo base_url(); ?>js/glow/1.7.0/core/core.js" type="text/javascript"></script>
-    <script src="<?php echo base_url(); ?>js/glow/1.7.0/widgets/widgets.js" type="text/javascript"></script>
-    <link href="<?php echo base_url(); ?>js/glow/1.7.0/widgets/widgets.css" type="text/css" rel="stylesheet" />
-    <script type="text/javascript">
-        glow.ready(function(){
-            new glow.widgets.Sortable(
-                '#content .grid_5, #content .grid_6',
-                {
-                    draggableOptions : {
-                        handle : 'h2'
-                    }
-                }
-            );
-        });
-    </script>
-    <!--[if IE]><![endif]><![endif]-->
+    <!-- start: META -->
+    <meta charset="utf-8" />
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- end: META -->
+    <!-- start: MAIN CSS -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/fonts/style.css"/>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/main.css"/>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/main-responsive.css"/>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/iCheck/skins/all.css"/>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css"/>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/perfect-scrollbar/src/perfect-scrollbar.css"/>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/theme_light.css" type="text/css" id="skin_color"/>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/print.css" type="text/css" media="print"/>
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/font-awesome/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <!-- end: MAIN CSS -->
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/fullcalendar/fullcalendar/fullcalendar.css"/>
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <link rel="shortcut icon" href="favicon.ico" />
 </head>
-<body>
-<h1 id="head">SGC - Sistema de Gerenciamento de Clientes</h1>
+<!-- end: HEAD -->
+<!-- start: BODY -->

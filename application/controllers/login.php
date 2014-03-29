@@ -18,9 +18,9 @@ class Login extends CI_Controller {
 
         $this->template->show('login', $data);
     }
-
-    /*public function login(){
-        $usuario = $this->input->post('login');
+/*
+    public function login(){
+        $usuario = $this->input->post('username');
         $senha = $this->input->post('password');
         $this->db->where('login',$usuario);
         $this->db->where('password',$senha);
@@ -38,9 +38,10 @@ class Login extends CI_Controller {
             $this->template->show('login');
         }
     }*/
-
     public function validate(){
+        //print_r($_POST);exit;
         $this->load->model('user_model');
+        //var_dump($_POST);exit;
         $result = $this->user_model->validate($this->input->post('login'),$this->input->post('password'));
         //var_dump($result);
         //exit;
