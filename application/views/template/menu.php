@@ -27,6 +27,12 @@ $menus = array(
         'icon'  =>'fa fa-calendar',
         'childs'=> array ('add' => array('url' => 'calendar/add', 'label' => 'Adicionar Evento')),
     ),
+    'lawsuit'   => array(
+        'url'   =>'lawsuit',
+        'label' =>'Processos',
+        'icon'  =>'clip-users-3',
+        'childs'=> array ('add' => array('url' => 'lawsuit/add', 'label' => 'Adicionar Processo'))
+    ),
     'logout' => array('url'=>'login/logout', 'label'=>'Logout','icon' =>'fa fa-sign-out',),
 );
 
