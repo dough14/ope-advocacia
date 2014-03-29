@@ -26,6 +26,13 @@
         <?php //} elseif($view == 'users') { ?>
             <li><?php echo anchor('user', 'Funcionários', 'class="btn btn_logout"'); ?></li>
             <li><?php echo anchor('user/add', 'Adicionar funcionario'); ?></li>
+			<li>
+				<?php echo anchor('lawsuit', 'Processos') ?>
+				<ul>
+					<li><?php echo anchor('lawsuit', 'Gerenciar') ?></li>
+					<li><?php echo anchor('lawsuit/add', 'Adicionar') ?></li>
+				</ul>
+			</li>
         <?php //} ?>
         <li><?php echo anchor('calendar', 'Calendário'); ?></li>
         <li><?php echo anchor('login/logout', 'Logout', 'class="btn btn_logout"'); ?></li>

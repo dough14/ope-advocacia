@@ -11,3 +11,6 @@ application/logs/*
 #Mr Developer
 .mr.developer.cfg
 .idea
+
+# Config
+application/config/config.php

@@ -133,10 +133,37 @@ th, td {
 
 #navigation > li {
 	display:inline;
-	margin:0
+	margin:0;
+	position: relative;
+	padding:5px 10px;
 }
 
-#navigation > li > a, #navigation > li > span {
+#navigation li ul{
+	display: none;
+	position: absolute;
+	left: 0px;
+	top: 26px;
+	padding: 20px 11px 9px;
+	background-color: #434A48;
+	z-index: 100;
+	list-style: none;
+}
+
+#navigation li ul li{
+	margin: 0px;
+	padding: 5px 0px;
+}
+
+#navigation li:hover ul{
+	display: block;
+}
+
+#navigation > li > a {
+	display:inline-block;
+	text-decoration:none;
+}
+
+#navigation > li > span {
 	display:inline-block;
 	padding:5px 10px;
 	text-decoration:none;
