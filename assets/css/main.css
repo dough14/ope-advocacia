@@ -1,8 +1,3 @@
-/* ---------------------------------------------------------------------- */
-/*	Import fonts
-/* ---------------------------------------------------------------------- */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,200,100,500,600,700,800,900);
 
 /* ---------------------------------------------------------------------- */
 /*	Basic Elements & Classes
@@ -10,7 +5,7 @@
 body {
 	color: #000000;
 	direction: ltr;
-	font-family: 'Open+Sans', sans-serif;
+	font-family: 'open_sansregular', sans-serif;
 	font-size: 13px;
 	padding: 0px !important;
 	margin: 0px !important;
@@ -36,7 +31,7 @@ a, a:focus, a:hover, a:active {
 }
 
 h1, h2, h3 {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'ralewayregular', sans-serif;
 }
 /* ---------------------------------------------------------------------- */
 /*	Forms
@@ -379,7 +374,7 @@ a.bricky:hover {
 .navbar > .container .navbar-brand, .logo {
 	padding: 14px 10px 12px;
 	margin-left: 0;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'ralewayregular', sans-serif;
 	font-size: 25px;
 	min-width:210px;
 }
@@ -584,7 +579,7 @@ li.dropdown.current-user .dropdown-menu li a {
 /*	Buttons
 /* ---------------------------------------------------------------------- */
 .btn {
-	font-family: 'Open Sans';
+	/*font-family: 'open_sansregular';*/
 }
 .btn-teal {
 	background-color: #569099;
@@ -827,7 +822,7 @@ li.dropdown.current-user .dropdown-menu li a {
 	border-width: 0;
 	box-shadow: none;
 	color: #FFFFFF !important;
-	font-family: 'Open Sans';
+	font-family: 'open_sansregular';
 	font-size: 11px !important;
 	font-weight: 300;
 	padding: 3px 7px;
@@ -2181,7 +2176,7 @@ span.star:before {
 	margin: 20px 0 20px;
 }
 .page-header h1 {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'ralewayregular', sans-serif;
 	font-weight: 200;
 	letter-spacing: -1px;
 	margin: 0 0 15px;
@@ -3914,7 +3909,7 @@ ul#countdown li p.timeRefDays, ul#countdown li p.timeRefHours, ul#countdown li p
 }
 .fc-header-title h2 {
 	color: #666666;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'ralewayregular', sans-serif;
 	font-weight: 200;
 	letter-spacing: -1px;
 }
@@ -4025,7 +4020,7 @@ body.lock-screen .user-info {
 }
 body.lock-screen .user-info h1 {
 	color: #666666;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'ralewayregular', sans-serif;
 	font-size: 30px;
 	font-weight: 300;
 	line-height: 32px;
@@ -4753,7 +4748,7 @@ td.column-right{
     font-size: 14px;
 }
 .invoice h4 {
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'open_sansregular',sans-serif;
     font-weight: 300 !important;
 }
 .invoice-details{

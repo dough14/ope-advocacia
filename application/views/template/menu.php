@@ -43,6 +43,9 @@ $menus = array(
     <!-- start: SIDEBAR -->
     <div class="main-navigation navbar-collapse collapse">
     <!-- start: MAIN MENU TOGGLER BUTTON -->
+        <div>
+            <?php echo anchor('dashboard', ' <img src="assets/images/logo.png">', 'style="float:left; width:175px;"'); ?>
+        </div>
         <div class="navigation-toggler">
             <i class="clip-chevron-left"></i>
             <i class="clip-chevron-right"></i>

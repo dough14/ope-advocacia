@@ -30,6 +30,7 @@
     <!-- start: MAIN CSS -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/fonts.css"/>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/fonts/style.css"/>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/main.css"/>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/main-responsive.css"/>
