@@ -200,3 +200,4 @@ $this->template->menu('clientes');
 </div>
 <!-- end: PAGE -->
 </div>
+</body>
