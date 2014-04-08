@@ -154,7 +154,7 @@ $this->template->menu('clientes');
                                             <td><?php echo $lawsuit['customer']; ?></td>
                                             <td><?php echo $lawsuit['type']; ?></td>
                                             <td><?php echo $lawsuit['lawyer']; ?></td>
-                                            <td><?php echo date("d/m/Y", strtotime($lawsuit['start_date'])); ?></td>
+                                            <td><?php echo date('d/m/Y', strtotime($lawsuit['start_date'])); ?></td>
                                             <td class="center">
                                                 <div class="visible-md visible-lg hidden-sm hidden-xs">
                                                     <a href="<?php echo base_url('lawsuit/edit/'.$lawsuit['id']) ?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar"><i class="fa fa-edit"></i></a>

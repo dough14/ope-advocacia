@@ -32,6 +32,8 @@
             <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
             <!--<![endif]-->
             <script src="<?php echo base_url(); ?>assets/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+            <script src="<?php echo base_url(); ?>assets/js/jquery.maskedinput.min.js"></script>
+            <script src="<?php echo base_url(); ?>assets/js/masks.js"></script>
             <script src="<?php echo base_url(); ?>assets/plugins/bootstrap/js/bootstrap.min.js"></script>
             <script src="<?php echo base_url(); ?>assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
             <script src="<?php echo base_url(); ?>assets/plugins/blockUI/jquery.blockUI.js"></script>

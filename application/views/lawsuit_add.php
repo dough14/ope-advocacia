@@ -95,7 +95,7 @@ $this->template->menu('lawsuits');
                                             echo 'Adicionar um novo processo';
                                         }?>
                                     </h2>
-                                    <?php echo form_open('lawsuit/save', 'id = "form"'); ?>
+                                    <?php echo form_open('lawsuit/save', 'id="form" class="form-horizontal"'); ?>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="errorHandler alert alert-danger no-display">
@@ -107,40 +107,52 @@ $this->template->menu('lawsuits');
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="control-label">
+                                                <label class="col-sm-3 control-label">
                                                     NB Nº <span class="symbol required"></span>
                                                 </label>
-                                                <?php echo form_input('code'); ?>
+												<div class="col-sm-9">
+													<?php echo form_input(array('name'=>'code','value'=>$code,'class'=>'form-control', 'placeholder'=>'Digite a NB')); ?>
+												</div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label">
+                                                <label class="col-sm-3 control-label">
                                                     Cliente <span class="symbol required"></span>
                                                 </label>
-                                                <?php echo form_dropdown('cliente_id', $customers) ?>
+                                                <div class="col-sm-9">
+													<?php echo form_dropdown('cliente_id', $customers, $customer, 'class="form-control"') ?>
+												</div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label">
+                                                <label class="col-sm-3 control-label">
                                                     Procuração <span class="symbol required"></span>
                                                 </label>
-                                                <?php echo form_dropdown('user_id', $lawyers) ?>
+												<div class="col-sm-9">
+													<?php echo form_dropdown('user_id', $lawyers, $lawyer, 'class="form-control"') ?>
+												</div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label">
+                                                <label class="col-sm-3 control-label">
                                                     ESP <span class="symbol required"></span>
                                                 </label>
-                                                <?php echo form_input('type') ?>
+												<div class="col-sm-9">
+													<?php echo form_input(array('name'=>'type','value'=>$esp,'class'=>'form-control')) ?>
+												</div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label">
+                                                <label class="col-sm-3 control-label">
                                                     DER <span class="symbol required"></span>
                                                 </label>
-                                                <?php echo form_input('start_date') ?>
+												<div class="col-sm-9">
+													<?php echo form_input(array('name'=>'start_date','value'=>$startDate,'class'=>'form-control','data-mask'=>'dob')) ?>
+												</div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label">
+                                                <label class="col-sm-3 control-label">
                                                     Observações <span class="symbol required"></span>
                                                 </label>
-                                                <?php echo form_textarea('note') ?>
+												<div class="col-sm-9">
+													<?php echo form_textarea(array('name'=>'note','value'=>$note,'class'=>'form-control')) ?>
+												</div>
                                             </div>
                                         </div>
                                     </div>

@@ -94,7 +94,7 @@ $this->template->menu('clientes');
                                echo 'Adicionar um novo cliente';
                             }?>
                         </h2>
-                        <?php echo form_open('cliente/save','id = "form"'); ?>
+                        <?php echo form_open('cliente/save','id="form" class="form-horizontal"'); ?>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="errorHandler alert alert-danger no-display">
@@ -106,55 +106,71 @@ $this->template->menu('clientes');
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="control-label">
+                                        <label class="col-sm-3 control-label">
                                             Nome <span class="symbol required"></span>
                                         </label>
-                                        <?php echo form_input('nome', $nome); ?>
+                                        <div class="col-sm-9">
+											<?php echo form_input(array('name'=>'nome','value'=>$nome,'class'=>'form-control')); ?>
+										</div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label">
+                                        <label class="col-sm-3 control-label">
                                             CPF <span class="symbol required"></span>
                                         </label>
-                                        <?php echo form_input('cpf', $cpf); ?>
+                                        <div class="col-sm-9">
+											<?php echo form_input(array('name'=>'cpf','value'=>$cpf,'class'=>'form-control','data-mask'=>'taxvat')); ?>
+										</div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label">
+                                        <label class="col-sm-3 control-label">
                                             Data de Nascimento <span class="symbol required"></span>
                                         </label>
-                                        <?php echo form_input('data_nasc', $data_nasc); ?>
+                                        <div class="col-sm-9">
+											<?php echo form_input(array('name'=>'data_nasc','value'=>$data_nasc,'class'=>'form-control','data-mask'=>'dob')); ?>
+										</div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label">
+                                        <label class="col-sm-3 control-label">
                                             Telefone <span class="symbol required"></span>
                                         </label>
-                                        <?php echo form_input('tel', $tel); ?>
+                                        <div class="col-sm-9">
+											<?php echo form_input(array('name'=>'tel','value'=>$tel,'class'=>'form-control','data-mask'=>'phone')); ?>
+										</div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label">
+                                        <label class="col-sm-3 control-label">
                                             Telefone comercial <span class="symbol required"></span>
                                         </label>
-                                        <?php echo form_input('tel2', $tel2); ?>
+                                        <div class="col-sm-9">
+											<?php echo form_input(array('name'=>'tel2','value'=>$tel2,'class'=>'form-control','data-mask'=>'phone')); ?>
+										</div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="control-label">
+                                        <label class="col-sm-3 control-label">
                                             Celular <span class="symbol required"></span>
                                         </label>
-                                        <?php echo form_input('cel', $cel); ?>
+                                        <div class="col-sm-9">
+											<?php echo form_input(array('name'=>'cel','value'=>$cel,'class'=>'form-control','data-mask'=>'phone')); ?>
+										</div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label">
+                                        <label class="col-sm-3 control-label">
                                             Endereço <span class="symbol required"></span>
                                         </label>
-                                        <?php echo form_input('endereco', $endereco); ?>
+                                        <div class="col-sm-9">
+											<?php echo form_input(array('name'=>'endereco','value'=>$endereco,'class'=>'form-control')); ?>
+										</div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label">
+                                        <label class="col-sm-3 control-label">
                                             CEP <span class="symbol required"></span>
                                         </label>
-                                        <?php echo form_input('cep', $cep); ?>
+                                        <div class="col-sm-9">
+											<?php echo form_input(array('name'=>'cep','value'=>$cep,'class'=>'form-control','data-mask'=>'postcode')); ?>
+										</div>
                                     </div>
                                 </div>
                             </div>

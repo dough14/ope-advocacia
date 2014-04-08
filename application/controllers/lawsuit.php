@@ -49,31 +49,60 @@ class Lawsuit extends CI_Controller {
 		$users = $this->user_model->get();
 		$data['lawyers'] = array( '' => 'Selecione um advogado...' );
 		foreach( $users as $user ) $data['lawyers'][$user['id']] = $user['nome'];
+		
+		// Foo data
+		$data['code'] 	   = '';
+		$data['customer']  = '';
+		$data['lawyer']    = '';
+		$data['esp']	   = '';
+		$data['startDate'] = '';
+		$data['note']	   = '';
+		
+        $this->template->show('lawsuit_add', $data);
+    }
+
+    public function edit($id = NULL){
+        if( empty($id) ) return redirect('lawsuit/add', 'refresh');
+		
+		
+		$this->load->model('lawsuit_model');
+		$this->load->model('cliente_model');
+		$this->load->model('user_model');
+		
+		$lawsuit = $this->lawsuit_model->get($id);
+        
+		$customers = $this->cliente_model->get();
+		$data['customers'] = array( '' => 'Selecione um cliente...' );
+		foreach( $customers as $customer ) $data['customers'][$customer['id']] = $customer['nome'];
+		
+		$users = $this->user_model->get();
+		$data['lawyers'] = array( '' => 'Selecione um advogado...' );
+		foreach( $users as $user ) $data['lawyers'][$user['id']] = $user['nome'];
+		
+		// Loaded data
+		$data['id']		   = $id;
+		$data['code'] 	   = $lawsuit['code'];
+		$data['customer']  = $lawsuit['cliente_id'];
+		$data['lawyer']    = $lawsuit['user_id'];
+		$data['esp']	   = $lawsuit['type'];
+		$data['startDate'] = implode('/',array_reverse(explode('-',$lawsuit['start_date'])));
+		$data['note']	   = $lawsuit['note'];
 
         $this->template->show('lawsuit_add', $data);
     }
 
-    public function edit($id){
-        $this->load->model('cliente_model');
-        $data = $this->cliente_model->get($id);
-
-        $data['page_title']  = "Editar Cliente #".$data['nome'];
-        $data['tipos_processo'] = $this->tiposProcesso;
-
-        $this->template->show('clientes_add', $data);
-    }
-
     public function remove($id){
-        $this->load->model('cliente_model');
-        $this->cliente_model->delete($id);
+        $this->load->model('lawsuit_model');
+        $this->lawsuit_model->delete($id);
 
-        redirect('cliente');
+        redirect('lawsuit');
     }
 
     public function save(){
         $this->load->model('lawsuit_model');
 
         $start_date = explode('/', $this->input->post('start_date'));
+		
         $start_date = date('Y-m-d', strtotime($start_date[2].'-'.$start_date[1].'-'.$start_date[0]));
 		
         $sql_data = array(

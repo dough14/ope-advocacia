@@ -37,13 +37,13 @@ class Lawsuit_model extends CI_Model {
 
         //'data_nasc'    => $this->input->post('data_nasc'),
 
-        $update = $this->db->update('cliente', $data);
+        $update = $this->db->update('lawsuits', $data);
 
         return $update;
     }
 /*TODO delete changing the flag status*/
     public function delete($id){
         $this->db->where('id', $id);
-        $this->db->delete('cliente');
+        $this->db->delete('lawsuits');
     }
 }
