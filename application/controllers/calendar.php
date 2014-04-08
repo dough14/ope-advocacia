@@ -29,7 +29,7 @@ class Calendar extends CI_Controller {
 			array( 'label' => 'Dashboard', 'url' => base_url() ),
 			array( 'label' => 'Calendário', 'active' => TRUE )
 		);
-		
+		$data['search'] = getSearch();
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
         $data['page_title']  = "Calendar";
         $data['events']      =  $this->calendar_model->calendar();
@@ -48,7 +48,7 @@ class Calendar extends CI_Controller {
 			array( 'label' => 'Calendário', 'url' => base_url('calendar') ),
 			array( 'label' => 'Adicionar Evento', 'active' => TRUE )
 		);
-		
+		$data['search'] = getSearch();
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
         $data['page_title']         = "Novo evento";
         $data['startDate']          = '';

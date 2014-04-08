@@ -29,7 +29,7 @@ class Lawsuit extends CI_Controller {
 			array( 'label' => 'Dashboard', 'url' => base_url() ),
 			array( 'label' => 'Processos', 'active' => TRUE )
 		);
-		
+		$data['search'] = getSearch();
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
         $data['lawsuits'] = $this->lawsuit_model->get(false);
         // $data['tipos_processo'] = $this->tiposProcesso;
@@ -53,7 +53,7 @@ class Lawsuit extends CI_Controller {
 			array( 'label' => 'Processos', 'url' => base_url('lawsuit') ),
 			array( 'label' => 'Novo', 'active' => TRUE )
 		);
-		
+		$data['search'] = getSearch();
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
 		$data['customers'] = array( '' => 'Selecione um cliente...' );
 		foreach( $customers as $customer ) $data['customers'][$customer['id']] = $customer['nome'];
@@ -90,7 +90,7 @@ class Lawsuit extends CI_Controller {
 			array( 'label' => 'Processos', 'url' => base_url('lawsuit') ),
 			array( 'label' => 'Editar', 'active' => TRUE )
 		);
-		
+		$data['search'] = getSearch();
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
 		$data['customers'] = array( '' => 'Selecione um cliente...' );
 		foreach( $customers as $customer ) $data['customers'][$customer['id']] = $customer['nome'];

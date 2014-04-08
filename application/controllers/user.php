@@ -34,7 +34,7 @@ class User extends CI_Controller {
 			array( 'label' => 'Dashboard', 'url' => base_url() ),
 			array( 'label' => 'Funcionários', 'active' => TRUE )
 		);
-		
+		$data['search'] = getSearch();
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
         $data['users'] = $this->user_model->get(false);
         $data['level_list'] = $this->LEVEL;
@@ -53,7 +53,7 @@ class User extends CI_Controller {
 			array( 'label' => 'Funcionários', 'url' => base_url('user') ),
 			array( 'label' => 'Adicionar', 'active' => TRUE )
 		);
-		
+		$data['search'] = getSearch();
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
         $data['page_title']  = "New User";
         $data['login']    = '';
@@ -74,7 +74,7 @@ class User extends CI_Controller {
 			array( 'label' => 'Funcionários', 'url' => base_url('user') ),
 			array( 'label' => 'Editar', 'active' => TRUE )
 		);
-		
+		$data['search'] = getSearch();
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
         $data['password'] = '';
         $data['page_title']  = "Editar Usuario #".$data['login'];

@@ -13,6 +13,23 @@ class Cliente_model extends CI_Model {
 		return array();
 	}
 	
+	public function searchBy($field = NULL, $value = NULL){
+		if( empty($field) || empty($value) ) return FALSE;
+		
+		if( is_array($field) && is_array($value) ){
+			foreach( $field as $key => $_field ) $this->db->or_where($_field.' LIKE', '%'.$value[$key].'%');
+			$this->db->order_by($field[0], 'asc');
+		}elseif( is_array($field) ){
+			foreach( $field as $key => $_field ) $this->db->or_where($_field.' LIKE', '%'.$value.'%');
+			$this->db->order_by($field[0], 'asc');
+		}else{
+			$this->db->where($field.' LIKE', '%'.$value.'%');
+			$this->db->order_by($field, 'asc');
+		}
+		
+		return $this->db->get('cliente')->result_array();
+	}
+	
 	public function create($data){
     //$this->db->insert('cliente', $data);
     //$this->db->_compile_select();

@@ -29,6 +29,7 @@ class Dashboard extends CI_Controller {
 			array( 'label' => 'Dashboard', 'active' => TRUE )
 		);
 		
+		$data['search'] = getSearch();
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
         $data['page_title']  = "Dashboard";
         $data['events']      =  $this->calendar_model->calendar();

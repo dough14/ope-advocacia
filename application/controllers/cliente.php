@@ -35,7 +35,7 @@ class Cliente extends CI_Controller {
 		);
 		
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
-		
+		$data['search'] = getSearch();
         $data['clientes'] = $this->cliente_model->get(false);
         $data['tipos_processo'] = $this->tiposProcesso;
 
@@ -53,7 +53,7 @@ class Cliente extends CI_Controller {
 		);
 		
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
-		
+		$data['search'] = getSearch();
 		//TODO
 
         $data['page_title']     = "Novo Cliente";
@@ -82,7 +82,7 @@ class Cliente extends CI_Controller {
 			array( 'label' => 'Clientes', 'url' => base_url('cliente') ),
 			array( 'label' => 'Editar', 'active' => TRUE )
 		);
-		
+		$data['search'] = getSearch();
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
 
         $data['page_title']  = "Editar Cliente #".$data['nome'];
