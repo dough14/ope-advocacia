@@ -16,11 +16,21 @@ class Calendar extends CI_Controller {
         if(!$this->session->userdata('logged')){
             redirect('login');
         }
+		
+		$this->load->helper('breadcrumbs');
+		$this->load->helper('search');
     }
 
     public function index(){
 
         $this->load->model('calendar_model');
+		
+		$breadcrumbs = array(
+			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Calendário', 'active' => TRUE )
+		);
+		
+		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
         $data['page_title']  = "Calendar";
         $data['events']      =  $this->calendar_model->calendar();
        // $this->load->model('calendar_model');
@@ -32,6 +42,14 @@ class Calendar extends CI_Controller {
     public function add(){
         //TODO
         $user = $this->session->userdata('user');
+		
+		$breadcrumbs = array(
+			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Calendário', 'url' => base_url('calendar') ),
+			array( 'label' => 'Adicionar Evento', 'active' => TRUE )
+		);
+		
+		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
         $data['page_title']         = "Novo evento";
         $data['startDate']          = '';
         $data['endDate']            = '';

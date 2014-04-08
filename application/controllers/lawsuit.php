@@ -11,26 +11,30 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Lawsuit extends CI_Controller {
     private $tiposProcesso;
 	
-    function Cliente() {
+    function Lawsuit() {
         parent::__construct();
         
 		if(!$this->session->userdata('logged'))
             redirect('login');
 
-        $this->tiposProcesso = array(
-            1 => 'Civil',
-            2 => 'Previdenciario',
-            3 => 'Trabalhista',
-        );
+		$this->load->helper('breadcrumbs');
+		$this->load->helper('search');
     }
 
     public function index(){
         // Load open transports
         $this->load->model('lawsuit_model');
+		
+		$breadcrumbs = array(
+			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Processos', 'active' => TRUE )
+		);
+		
+		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
         $data['lawsuits'] = $this->lawsuit_model->get(false);
         // $data['tipos_processo'] = $this->tiposProcesso;
 
-        $data['page_title']  = "Lawsuit";
+        $data['page_title']  = "Processos";
 
         // Load View
         $this->template->show('lawsuit', $data);
@@ -43,6 +47,14 @@ class Lawsuit extends CI_Controller {
 		$this->load->model('user_model');
         
 		$customers = $this->cliente_model->get();
+		
+		$breadcrumbs = array(
+			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Processos', 'url' => base_url('lawsuit') ),
+			array( 'label' => 'Novo', 'active' => TRUE )
+		);
+		
+		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
 		$data['customers'] = array( '' => 'Selecione um cliente...' );
 		foreach( $customers as $customer ) $data['customers'][$customer['id']] = $customer['nome'];
 		
@@ -72,6 +84,14 @@ class Lawsuit extends CI_Controller {
 		$lawsuit = $this->lawsuit_model->get($id);
         
 		$customers = $this->cliente_model->get();
+		
+		$breadcrumbs = array(
+			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Processos', 'url' => base_url('lawsuit') ),
+			array( 'label' => 'Editar', 'active' => TRUE )
+		);
+		
+		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
 		$data['customers'] = array( '' => 'Selecione um cliente...' );
 		foreach( $customers as $customer ) $data['customers'][$customer['id']] = $customer['nome'];
 		

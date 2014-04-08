@@ -57,25 +57,8 @@ $this->template->menu('users');
                 <div class="col-sm-12">
                     <!-- start: PAGE TITLE & BREADCRUMB -->
                     <ol class="breadcrumb">
-                        <li>
-                            <i class="clip-grid-6"></i>
-                            <a href="#">
-                                Tables
-                            </a>
-                        </li>
-                        <li class="active">
-                            Static Tables
-                        </li>
-                        <li class="search-box">
-                            <form class="sidebar-search">
-                                <div class="form-group">
-                                    <input type="text" placeholder="Start Searching...">
-                                    <button class="submit">
-                                        <i class="clip-search-3"></i>
-                                    </button>
-                                </div>
-                            </form>
-                        </li>
+                        <?php if( isset($breadcrumbs) ) echo $breadcrumbs ?>
+                        <?php if( isset($search) ) echo $search ?>
                     </ol>
 
 
@@ -95,7 +78,7 @@ $this->template->menu('users');
                                             echo 'Adicionar um novo funcionário';
                                         }?>
                                     </h2>
-                                    <?php echo form_open('user/save', 'id = "form"'); ?>
+                                    <?php echo form_open('user/save', 'id="form" class="form-horizontal"'); ?>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="errorHandler alert alert-danger no-display">
@@ -107,28 +90,34 @@ $this->template->menu('users');
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="control-label">
+                                                <label class="col-sm-3 control-label">
                                                     Login <span class="symbol required"></span>
                                                 </label>
-                                                <?php echo form_input('login', $login); ?>
+												<div class="col-sm-9">
+													<?php echo form_input(array('name'=>'login','value'=>$login,'class'=>'form-control')); ?>
+												</div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label">
+                                                <label class="col-sm-3 control-label">
                                                     Senha <span class="symbol required"></span>
                                                 </label>
-                                                <?php if (isset($id)) { ?>
-                                                    <?php echo form_password('password', $password, 'id="password" disabled'); ?>
-                                                    <?php echo form_checkbox('reset_password', 1, false, 'id="reset_password" title="Edit Password"'); ?>
-                                                <?php } else { ?>
-                                                    <?php echo form_password('password', $password, 'id="password"'); ?>
-                                                    <?php echo form_hidden('reset_password', 1); ?>
-                                                <?php } ?>
+												<div class="col-sm-9">
+													<?php if (isset($id)) { ?>
+														<?php echo form_password(array('name'=>'password', 'value'=>$password, 'id'=>'password','disabled'=>'disabled','class'=>'form-control')); ?>
+														<?php echo form_checkbox(array('name'=>'reset_password','value'=>1,'id'=>'reset_password','title'=>'Edit Password','class'=>'form-control')); ?>
+													<?php } else { ?>
+														<?php echo form_password(array('name'=>'password','value'=>$password,'id'=>'password','class'=>'form-control')); ?>
+														<?php echo form_hidden('reset_password', 1); ?>
+													<?php } ?>
+												</div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label">
+                                                <label class="col-sm-3 control-label">
                                                     Nível de usuário <span class="symbol required"></span>
                                                 </label>
-                                                <?php echo form_dropdown('level', $level_list, $level); ?>
+												<div class="col-sm-9">
+													<?php echo form_dropdown('level', $level_list, $level, 'class="form-control"'); ?>
+												</div>
                                             </div>
                                         </div>
                                     </div>

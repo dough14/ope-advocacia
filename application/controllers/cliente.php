@@ -20,11 +20,22 @@ class Cliente extends CI_Controller {
             2 => 'Previdenciario',
             3 => 'Trabalhista',
         );
+		
+		$this->load->helper('breadcrumbs');
+		$this->load->helper('search');
     }
 
     public function index(){
         // Load open transports
         $this->load->model('cliente_model');
+		
+		$breadcrumbs = array(
+			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Clientes', 'active' => TRUE )
+		);
+		
+		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
+		
         $data['clientes'] = $this->cliente_model->get(false);
         $data['tipos_processo'] = $this->tiposProcesso;
 
@@ -35,7 +46,15 @@ class Cliente extends CI_Controller {
     }
 
     public function add(){
-        //TODO
+        $breadcrumbs = array(
+			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Clientes', 'url' => base_url('cliente') ),
+			array( 'label' => 'Novo', 'active' => TRUE )
+		);
+		
+		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
+		
+		//TODO
 
         $data['page_title']     = "Novo Cliente";
         $data['nome']           = '';
@@ -55,8 +74,16 @@ class Cliente extends CI_Controller {
     }
 
     public function edit($id){
-        $this->load->model('cliente_model');
+		$this->load->model('cliente_model');
         $data = $this->cliente_model->get($id);
+		
+        $breadcrumbs = array(
+			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Clientes', 'url' => base_url('cliente') ),
+			array( 'label' => 'Editar', 'active' => TRUE )
+		);
+		
+		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
 
         $data['page_title']  = "Editar Cliente #".$data['nome'];
         $data['tipos_processo'] = $this->tiposProcesso;

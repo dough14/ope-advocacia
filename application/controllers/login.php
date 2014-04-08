@@ -10,7 +10,9 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Login extends CI_Controller {
 
     public function index(){
-        // Load View
+		if( $this->session->userdata('logged') ) redirect('dashboard');
+		
+		// Load View
         $data['page_title']  = "Login";
 
         $data['login'] = '';

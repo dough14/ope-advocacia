@@ -21,11 +21,21 @@ class User extends CI_Controller {
             3 => 'Atendente - Acesso a todas agendas',
             4 => 'Ajudante - Acesso a todas agendas'
         );
+		
+		$this->load->helper('breadcrumbs');
+		$this->load->helper('search');
     }
 
     public function index(){
         // Load open transports
         $this->load->model('user_model');
+		
+		$breadcrumbs = array(
+			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Funcionários', 'active' => TRUE )
+		);
+		
+		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
         $data['users'] = $this->user_model->get(false);
         $data['level_list'] = $this->LEVEL;
 
@@ -38,6 +48,13 @@ class User extends CI_Controller {
     public function add(){
         //TODO
 
+		$breadcrumbs = array(
+			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Funcionários', 'url' => base_url('user') ),
+			array( 'label' => 'Adicionar', 'active' => TRUE )
+		);
+		
+		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
         $data['page_title']  = "New User";
         $data['login']    = '';
         $data['email']    = '';
@@ -52,6 +69,13 @@ class User extends CI_Controller {
         $this->load->model('user_model');
         $data = $this->user_model->get($id);
 
+		$breadcrumbs = array(
+			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Funcionários', 'url' => base_url('user') ),
+			array( 'label' => 'Editar', 'active' => TRUE )
+		);
+		
+		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
         $data['password'] = '';
         $data['page_title']  = "Editar Usuario #".$data['login'];
 

@@ -16,11 +16,20 @@ class Dashboard extends CI_Controller {
         if(!$this->session->userdata('logged')){
             redirect('login');
         }
+		
+		$this->load->helper('breadcrumbs');
+		$this->load->helper('search');
     }
 
     public function index(){
 
         $this->load->model('calendar_model');
+		
+		$breadcrumbs = array(
+			array( 'label' => 'Dashboard', 'active' => TRUE )
+		);
+		
+		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
         $data['page_title']  = "Dashboard";
         $data['events']      =  $this->calendar_model->calendar();
        // $this->load->model('calendar_model');
