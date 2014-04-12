@@ -46,7 +46,7 @@
         <!-- end: REGISTER BOX -->
         <!-- start: COPYRIGHT -->
         <div class="copyright">
-            2014 &copy; clip-one by cliptheme.
+            2014 &copy; Douglas Leandro.
         </div>
         <!-- end: COPYRIGHT -->
     </div>

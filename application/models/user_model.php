@@ -29,7 +29,7 @@ class User_model extends CI_Model {
         $this->db->where('login', $login)->where('password', sha1($password.$this->salt));
 
         $get = $this->db->get('user');
-
+        //echo $this->db->last_query();
         if($get->num_rows > 0){
             return $get->row_array();
         }

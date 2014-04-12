@@ -39,12 +39,13 @@ class Login extends CI_Controller {
         else{
             $this->template->show('login');
         }
-    }*/
+    }
+*/
     public function validate(){
         //print_r($_POST);exit;
         $this->load->model('user_model');
         //var_dump($_POST);exit;
-        $result = $this->user_model->validate($this->input->post('login'),$this->input->post('password'));
+        $result = $this->user_model->validate($this->input->post('username'),$this->input->post('password'));
         //var_dump($result);
         //exit;
 
