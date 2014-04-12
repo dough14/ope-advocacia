@@ -29,6 +29,7 @@ class Calendar extends CI_Controller {
 			array( 'label' => 'Dashboard', 'url' => base_url() ),
 			array( 'label' => 'Calendário', 'active' => TRUE )
 		);
+		
 		$data['search'] = getSearch();
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
         $data['page_title']  = "Calendar";
@@ -57,6 +58,34 @@ class Calendar extends CI_Controller {
         $data['last_user_update']   = '';
         $data['last_update']        = '';
         $data['user_fk']            = $user;
+
+
+        $this->template->show('calendar_add', $data);
+    }
+	
+	public function edit($id){
+		$this->load->model('calendar_model');
+        $data = $this->calendar_model->get($id);
+		
+        $breadcrumbs = array(
+			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Calendário', 'url' => base_url('calendar') ),
+			array( 'label' => 'Adicionar Evento', 'active' => TRUE )
+		);
+		
+		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
+		$data['search'] = getSearch();
+		//TODO
+
+        $data['search'] = getSearch();
+		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
+        $data['page_title']         = "Editar evento";
+        $data['startDate']          = $data['startDate'];
+        $data['endDate']            = $data['endDate'];
+        $data['title']              = $data['title'];
+        $data['last_user_update']   = $data['last_user_update'];
+        $data['last_update']        = $data['last_update'];
+        $data['user_fk']            = $data['user_fk'];
 
 
         $this->template->show('calendar_add', $data);

@@ -16,6 +16,16 @@ class calendar_model extends CI_Model {
 
 	}
 	
+	public function get($id = false){
+		if ($id) $this->db->where('id', $id);
+		$this->db->order_by('title', 'asc');
+		$get = $this->db->get('calendar');
+		if($id) return $get->row_array();
+		if($get->num_rows > 0) return $get->result_array();
+
+		return array();
+	}
+	
 	public function create($data){
 
         return $this->db->insert('calendar', $data);

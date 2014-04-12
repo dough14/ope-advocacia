@@ -78,7 +78,7 @@ $this->template->menu('users');
                                             echo 'Adicionar um novo evento';
                                         }?>
                                     </h2>
-                                    <?php echo form_open('calendar/save', 'id = "form"'); ?>
+                                    <?php echo form_open('calendar/save', 'id="form" class="form-horizontal"'); ?>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="errorHandler alert alert-danger no-display">
@@ -90,22 +90,28 @@ $this->template->menu('users');
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="control-label">
+                                                <label class="col-sm-4 control-label">
                                                     Data de início <span class="symbol required"></span>
                                                 </label>
-                                                <?php echo form_input('startDate', $startDate); ?>
+                                                <div class="col-sm-8">
+													<?php echo form_input(array('name'=>'startDate', 'value'=>date('d/m/Y', strtotime($startDate)), 'class'=>'form-control', 'data-mask'=>'dob')); ?>
+												</div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label">
+                                                <label class="col-sm-4 control-label">
                                                     Data de término <span class="symbol required"></span>
                                                 </label>
-                                                <?php echo form_input('endDate', $endDate); ?>
+												<div class="col-sm-8">
+													<?php echo form_input(array('name' => 'endDate', 'value' => date('d/m/Y', strtotime($endDate)), 'class' => 'form-control', 'data-mask' => 'dob')); ?>
+												</div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label">
+                                                <label class="col-sm-4 control-label">
                                                     Título do evento <span class="symbol required"></span>
                                                 </label>
-                                                <?php echo form_input('title', $title); ?>
+												<div class="col-sm-8">
+													<?php echo form_input(array('name'=>'title', 'value'=>$title, 'class'=>'form-control')); ?>
+												</div>
                                             </div>
                                         </div>
                                         <td class="hide"><?php echo form_input('user_fk', $user_fk, 'class="hide"'); ?></td>
