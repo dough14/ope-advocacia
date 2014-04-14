@@ -132,7 +132,7 @@ $this->template->menu('clientes');
                                         </label>
                                     </div></td>
                                 <td>
-                                    <a href="#">
+                                    <a href="<?php echo base_url('cliente/edit/'.$cliente['id']) ?>">
                                         <?php echo $cliente['nome']; ?>
                                     </a></td>
                                 <td><?php echo $cliente['cpf']; ?></td>

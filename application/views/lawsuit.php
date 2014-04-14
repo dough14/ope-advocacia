@@ -131,7 +131,7 @@ $this->template->menu('clientes');
                                                     </label>
                                                 </div></td>
                                             <td>
-                                                <a href="#">
+                                                <a href="<?php echo base_url('lawsuit/edit/'.$lawsuit['id']) ?>">
                                                     <?php echo $lawsuit['code']; ?>
                                                 </a></td>
                                             <td><?php echo $lawsuit['customer']; ?></td>

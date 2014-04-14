@@ -131,7 +131,7 @@ $this->template->menu('calendar');
 											</div>
 										</td>
 										<td>
-											<a href="#">
+											<a href="<?php echo base_url('calendar/edit/'.$event->id) ?>">
 												<?php echo $event->title; ?>
 											</a>
 										</td>

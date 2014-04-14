@@ -130,7 +130,7 @@ $this->template->menu('users');
                                                     </label>
                                                 </div></td>
                                             <td>
-                                                <a href="#">
+                                                <a href="<?php echo base_url('user/edit/'.$user['id']) ?>">
                                                     <?php echo $user['login']; ?>
                                                 </a>
                                             </td>

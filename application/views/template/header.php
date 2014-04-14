@@ -28,6 +28,7 @@
     <meta content="" name="author" />
     <!-- end: META -->
     <!-- start: MAIN CSS -->
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-1.11.0.min.js"></script>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/font-awesome/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/fonts.css"/>

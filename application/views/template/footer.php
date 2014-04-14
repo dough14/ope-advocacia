@@ -26,7 +26,6 @@
             <!--[if lt IE 9]>
             <script src="<?php echo base_url(); ?>assets/plugins/respond.min.js"></script>
             <script src="<?php echo base_url(); ?>assets/plugins/excanvas.min.js"></script>
-            <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.min1.10.2.js"></script>
             <![endif]-->
             <!--[if gte IE 9]><!-->
             <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
