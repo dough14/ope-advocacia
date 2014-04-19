@@ -8,7 +8,7 @@
 $class = '';
 $active = '';
 $menus = array(
-    'dashboard' => array('url'=>'dashboard', 'label'=>'Dashboard', 'icon'=>'clip-home-2'),
+    'dashboard' => array('url'=>'dashboard', 'label'=>'Painel de controle', 'icon'=>'clip-home-2'),
     'cliente'   => array(
         'url'   =>'cliente',
         'label' =>'Cliente',

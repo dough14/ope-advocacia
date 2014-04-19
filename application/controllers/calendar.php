@@ -26,7 +26,7 @@ class Calendar extends CI_Controller {
         $this->load->model('calendar_model');
 		
 		$breadcrumbs = array(
-			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Painel de controle', 'url' => base_url() ),
 			array( 'label' => 'Calendário', 'active' => TRUE )
 		);
 		
@@ -45,7 +45,7 @@ class Calendar extends CI_Controller {
         $user = $this->session->userdata('user');
 		
 		$breadcrumbs = array(
-			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Painel de controle', 'url' => base_url() ),
 			array( 'label' => 'Calendário', 'url' => base_url('calendar') ),
 			array( 'label' => 'Adicionar Evento', 'active' => TRUE )
 		);
@@ -68,7 +68,7 @@ class Calendar extends CI_Controller {
         $data = $this->calendar_model->get($id);
 		
         $breadcrumbs = array(
-			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Painel de controle', 'url' => base_url() ),
 			array( 'label' => 'Calendário', 'url' => base_url('calendar') ),
 			array( 'label' => 'Adicionar Evento', 'active' => TRUE )
 		);

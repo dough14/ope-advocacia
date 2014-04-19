@@ -31,7 +31,7 @@ class User extends CI_Controller {
         $this->load->model('user_model');
 		
 		$breadcrumbs = array(
-			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Painel de controle', 'url' => base_url() ),
 			array( 'label' => 'Funcionários', 'active' => TRUE )
 		);
 		$data['search'] = getSearch();
@@ -49,7 +49,7 @@ class User extends CI_Controller {
         //TODO
 
 		$breadcrumbs = array(
-			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Painel de controle', 'url' => base_url() ),
 			array( 'label' => 'Funcionários', 'url' => base_url('user') ),
 			array( 'label' => 'Adicionar', 'active' => TRUE )
 		);
@@ -70,7 +70,7 @@ class User extends CI_Controller {
         $data = $this->user_model->get($id);
 
 		$breadcrumbs = array(
-			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Painel de controle', 'url' => base_url() ),
 			array( 'label' => 'Funcionários', 'url' => base_url('user') ),
 			array( 'label' => 'Editar', 'active' => TRUE )
 		);

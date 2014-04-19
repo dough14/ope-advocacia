@@ -30,7 +30,7 @@ class Cliente extends CI_Controller {
         $this->load->model('cliente_model');
 		
 		$breadcrumbs = array(
-			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Painel de controle', 'url' => base_url() ),
 			array( 'label' => 'Clientes', 'active' => TRUE )
 		);
 		
@@ -47,7 +47,7 @@ class Cliente extends CI_Controller {
 
     public function add(){
         $breadcrumbs = array(
-			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Painel de controle', 'url' => base_url() ),
 			array( 'label' => 'Clientes', 'url' => base_url('cliente') ),
 			array( 'label' => 'Novo', 'active' => TRUE )
 		);
@@ -78,7 +78,7 @@ class Cliente extends CI_Controller {
         $data = $this->cliente_model->get($id);
 		
         $breadcrumbs = array(
-			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Painel de controle', 'url' => base_url() ),
 			array( 'label' => 'Clientes', 'url' => base_url('cliente') ),
 			array( 'label' => 'Editar', 'active' => TRUE )
 		);

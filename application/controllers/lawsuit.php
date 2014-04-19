@@ -26,7 +26,7 @@ class Lawsuit extends CI_Controller {
         $this->load->model('lawsuit_model');
 		
 		$breadcrumbs = array(
-			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Painel de controle', 'url' => base_url() ),
 			array( 'label' => 'Processos', 'active' => TRUE )
 		);
 		$data['search'] = getSearch();
@@ -49,7 +49,7 @@ class Lawsuit extends CI_Controller {
 		$customers = $this->cliente_model->get();
 		
 		$breadcrumbs = array(
-			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Painel de controle', 'url' => base_url() ),
 			array( 'label' => 'Processos', 'url' => base_url('lawsuit') ),
 			array( 'label' => 'Novo', 'active' => TRUE )
 		);
@@ -86,7 +86,7 @@ class Lawsuit extends CI_Controller {
 		$customers = $this->cliente_model->get();
 		
 		$breadcrumbs = array(
-			array( 'label' => 'Dashboard', 'url' => base_url() ),
+			array( 'label' => 'Painel de controle', 'url' => base_url() ),
 			array( 'label' => 'Processos', 'url' => base_url('lawsuit') ),
 			array( 'label' => 'Editar', 'active' => TRUE )
 		);

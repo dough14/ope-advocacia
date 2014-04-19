@@ -71,7 +71,7 @@ $this->template->menu('dashboard');
                         <?php if( isset($search) ) echo $search ?>
                     </ol>
                     <div class="page-header">
-                        <h1>Dashboard <small>overview &amp; stats </small></h1>
+                        <h1>Painel de controle</h1>
                     </div>
                     <!-- end: PAGE TITLE & BREADCRUMB -->
                 </div>
