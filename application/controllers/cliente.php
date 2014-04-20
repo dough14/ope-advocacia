@@ -19,6 +19,7 @@ class Cliente extends CI_Controller {
             1 => 'Civil',
             2 => 'Previdenciario',
             3 => 'Trabalhista',
+            4 => 'Outro',
         );
 		
 		$this->load->helper('breadcrumbs');
@@ -62,6 +63,8 @@ class Cliente extends CI_Controller {
         $data['tel']            = '';
         $data['tel2']           = '';
         $data['cel']            = '';
+        $data['tel_alt']        = '';
+        $data['contatar']       = '';
         $data['data_nasc']      = '';
         $data['endereco']       = '';
         $data['cep']            = '';
@@ -85,7 +88,7 @@ class Cliente extends CI_Controller {
 		$data['search'] = getSearch();
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
 
-        $data['page_title']  = "Editar Cliente #".$data['nome'];
+        $data['page_title']  = "Editar Cliente # ".$data['nome'];
         $data['tipos_processo'] = $this->tiposProcesso;
 
         $this->template->show('clientes_add', $data);
@@ -110,6 +113,8 @@ class Cliente extends CI_Controller {
             'cpf'                => $this->input->post('cpf'),
             'tel'                => $this->input->post('tel'),
             'tel2'               => $this->input->post('tel2'),
+            'tel_alt'            => $this->input->post('tel_alt'),
+            'contatar'           => $this->input->post('contatar'),
             'cel'                => $this->input->post('cel'),
             'endereco'           => $this->input->post('endereco'),
             'cep'                => $this->input->post('cep'),

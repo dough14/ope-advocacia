@@ -109,6 +109,7 @@ $this->template->menu('clientes');
                                             Data de Nascimento <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-9">
+                                            <?php $data_nasc = date('d/m/Y', strtotime(str_replace('-', '/', $data_nasc))); ?>
 											<?php echo form_input(array('name'=>'data_nasc','value'=>$data_nasc,'class'=>'form-control','data-mask'=>'dob')); ?>
 										</div>
                                     </div>
@@ -122,7 +123,7 @@ $this->template->menu('clientes');
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">
-                                            Telefone comercial <span class="symbol required"></span>
+                                            Telefone comercial
                                         </label>
                                         <div class="col-sm-9">
 											<?php echo form_input(array('name'=>'tel2','value'=>$tel2,'class'=>'form-control','data-mask'=>'phone')); ?>
@@ -132,11 +133,27 @@ $this->template->menu('clientes');
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">
-                                            Celular <span class="symbol required"></span>
+                                            Celular
                                         </label>
                                         <div class="col-sm-9">
-											<?php echo form_input(array('name'=>'cel','value'=>$cel,'class'=>'form-control','data-mask'=>'phone')); ?>
-										</div>
+                                            <?php echo form_input(array('name'=>'cel','value'=>$cel,'class'=>'form-control','data-mask'=>'phone')); ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">
+                                            Telefone alternativo
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <?php echo form_input(array('name'=>'tel_alt','value'=>$tel_alt,'class'=>'form-control','data-mask'=>'phone')); ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">
+                                            Contatar:
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <?php echo form_input(array('name'=>'contatar','value'=>$contatar,'class'=>'form-control')); ?>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">
