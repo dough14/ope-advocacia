@@ -53,10 +53,10 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
   KEY `last_activity_idx` (`last_activity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela ope_advocacia.ci_sessions: ~6 rows (aproximadamente)
+-- Copiando dados para a tabela ope_advocacia.ci_sessions: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `ci_sessions` DISABLE KEYS */;
 INSERT IGNORE INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-	('2a8c5f6a5a175d24c984262da7eec680', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36', 1398024524, 'a:4:{s:9:"user_data";s:0:"";s:6:"logged";b:1;s:4:"user";s:1:"5";s:5:"level";s:1:"1";}');
+	('f42d7094fcadb8bfdc3c317e4984ef32', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36', 1398048208, 'a:4:{s:9:"user_data";s:0:"";s:6:"logged";b:1;s:4:"user";s:1:"5";s:5:"level";s:1:"1";}');
 /*!40000 ALTER TABLE `ci_sessions` ENABLE KEYS */;
 
 
@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
 INSERT IGNORE INTO `cliente` (`id`, `nome`, `cpf`, `tel`, `tipos_processo`, `endereco`, `cep`, `uf`, `date_created`, `data_nasc`, `tel2`, `cel`, `tel_alt`, `contatar`, `num_beneficio`, `obs`, `status`) VALUES
 	(1, 'Douglas Leandro', '123.454.876-54', '(11) 1111-11111', '0', 'Rua qualquer nº2', '01312-010', '0', '2014-04-12 08:38:59', '1970-01-01', '', '(11) 9822-23195', NULL, NULL, NULL, NULL, NULL),
-	(24, 'teste', 'cpf', 'telefone', '3', NULL, NULL, NULL, '2014-03-16 23:24:41', '1994-01-12', 'telefone com', 'cel', NULL, NULL, NULL, NULL, NULL),
+	(24, 'teste', '', '', '0', '', '', '0', '2014-04-20 22:06:48', '1994-12-01', '', '', '(88) 8888-88888', 'alguem', NULL, NULL, NULL),
 	(25, 'Manolo Pina', '123456789', '12323131', '0', 'Rua qualquer', '01312010', '0', '2014-04-05 17:05:35', '1990-03-22', '12312121', '1232131', NULL, NULL, NULL, NULL, NULL),
 	(27, 'a', '222.222.222-22', '(22) 2222-22222', '0', '1361656', '61615-321', '0', '2014-04-19 16:40:56', '1999-01-12', '(11) 1111-11111', '(33) 3333-33333', '(33) 3333-33333', 'alguem', NULL, NULL, NULL);
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
@@ -124,6 +124,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `telefone` varchar(15) DEFAULT NULL,
   `password` varchar(40) NOT NULL,
   `level` tinyint(4) NOT NULL,
   `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -133,10 +134,10 @@ CREATE TABLE IF NOT EXISTS `user` (
   UNIQUE KEY `login` (`login`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela ope_advocacia.user: ~2 rows (aproximadamente)
+-- Copiando dados para a tabela ope_advocacia.user: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT IGNORE INTO `user` (`id`, `nome`, `email`, `password`, `level`, `date_created`, `login`, `last_login`) VALUES
-	(5, 'ADMIN', '', 'b007febbc0f75455c60c521f1c503f7a6eb81b73', 1, '2014-01-04 22:05:30', 'admin', '2014-03-12 19:55:47');
+INSERT IGNORE INTO `user` (`id`, `nome`, `email`, `telefone`, `password`, `level`, `date_created`, `login`, `last_login`) VALUES
+	(5, 'Administrador', 'email@teste.com', '(12) 3456-7897', 'b007febbc0f75455c60c521f1c503f7a6eb81b73', 1, '2014-01-04 22:05:30', 'admin', '2014-03-12 19:55:47');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
