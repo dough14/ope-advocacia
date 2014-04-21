@@ -120,14 +120,16 @@ $this->template->menu('clientes');
                                         <?php echo $cliente['nome']; ?>
                                     </a></td>
                                 <td><?php echo $cliente['cpf']; ?></td>
-                                <td><?php echo date("j/m/Y", strtotime($cliente['data_nasc'])); ?></td>
-                                <td><?php echo date("j/m/Y, g:i a", strtotime($cliente['date_created'])); ?></td>
+                                <td><?php echo date("d/m/Y", strtotime($cliente['data_nasc'])); ?></td>
+                                <td><?php echo date("d/m/Y, g:i a", strtotime($cliente['date_created'])); ?></td>
                                 <td>Feb 18</td>
                                 <td><span class="label label-sm label-inverse">Flagged</span></td>
                                 <td class="center">
                                     <div class="visible-md visible-lg hidden-sm hidden-xs">
                                         <a href="<?php echo base_url('cliente/edit/'.$cliente['id']) ?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar"><i class="fa fa-edit"></i></a>
-                                        <a href="<?php echo base_url('cliente/remove/'.$cliente['id']) ?>" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remover"><i class="fa fa-times fa fa-white"></i></a>
+                                        <?php if($this->session->userdata('user') == 5): ?>
+                                            <a href="<?php echo base_url('cliente/remove/'.$cliente['id']) ?>" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remover"><i class="fa fa-times fa fa-white"></i></a>
+                                        <?php endif ?>
                                     </div>
                                     <div class="visible-xs visible-sm hidden-md hidden-lg">
                                         <div class="btn-group">
@@ -140,11 +142,13 @@ $this->template->menu('clientes');
                                                         <i class="fa fa-edit"></i> Editar
                                                     </a>
                                                 </li>
+                                                <?php if($this->session->userdata('user') == 5): ?>
                                                 <li role="presentation">
                                                     <a role="menuitem" tabindex="-1" href="<?php echo base_url('cliente/remove/'.$cliente['id']) ?>">
                                                         <i class="fa fa-times"></i> Remover
                                                     </a>
                                                 </li>
+                                                <?php endif ?>
                                             </ul>
                                         </div>
                                     </div>

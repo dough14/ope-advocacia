@@ -8,7 +8,10 @@
 
 
 // Load Menu
-$this->template->menu('users');
+
+?>
+<?php if($this->session->userdata('user') == 5):
+    $this->template->menu('users');
 ?>
 <body>
 <!-- start: HEADER -->
@@ -91,11 +94,35 @@ $this->template->menu('users');
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="col-sm-3 control-label">
+                                                    Nome <span class="symbol required"></span>
+                                                </label>
+                                                <div class="col-sm-9">
+                                                    <?php echo form_input(array('name'=>'nome','value'=>$nome,'class'=>'form-control')); ?>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">
+                                                    Telefone para contato
+                                                </label>
+                                                <div class="col-sm-9">
+                                                    <?php echo form_input(array('name'=>'telefone','value'=>$telefone,'class'=>'form-control','data-mask'=>'phone')); ?>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">
+                                                    Email
+                                                </label>
+                                                <div class="col-sm-9">
+                                                    <?php echo form_input(array('name'=>'email','value'=>$email,'class'=>'form-control')); ?>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">
                                                     Login <span class="symbol required"></span>
                                                 </label>
-												<div class="col-sm-9">
-													<?php echo form_input(array('name'=>'login','value'=>$login,'class'=>'form-control')); ?>
-												</div>
+                                                <div class="col-sm-9">
+                                                    <?php echo form_input(array('name'=>'login','value'=>$login,'class'=>'form-control')); ?>
+                                                </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-3 control-label">
@@ -153,3 +180,4 @@ $this->template->menu('users');
     </div>
 </div>
 </body>
+<?php endif ?>

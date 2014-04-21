@@ -55,8 +55,10 @@ class User extends CI_Controller {
 		);
 		$data['search'] = getSearch();
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
-        $data['page_title']  = "New User";
+        $data['page_title']  = "Novo funcionário";
+        $data['nome']    = '';
         $data['login']    = '';
+        $data['telefone']    = '';
         $data['email']    = '';
         $data['password'] = '';
         $data['level']    = '1';
@@ -77,7 +79,7 @@ class User extends CI_Controller {
 		$data['search'] = getSearch();
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
         $data['password'] = '';
-        $data['page_title']  = "Editar Usuario #".$data['login'];
+        $data['page_title']  = "Editar Usuario #".$data['nome'];
 
         $data['level_list'] = $this->LEVEL;
 
@@ -95,7 +97,10 @@ class User extends CI_Controller {
         $this->load->model('user_model');
 
         $sql_data = array(
+            'nome'     => $this->input->post('nome'),
             'login'    => $this->input->post('login'),
+            'telefone' => $this->input->post('telefone'),
+            'email'    => $this->input->post('email'),
             'level'    => $this->input->post('level')
         );
 

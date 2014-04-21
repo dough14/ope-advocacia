@@ -7,7 +7,10 @@
  */
 
 // Load Menu
-$this->template->menu('users');
+
+?>
+<?php if($this->session->userdata('user') == 5):
+    $this->template->menu('users');
 ?>
 <body>
 <!-- start: HEADER -->
@@ -88,23 +91,7 @@ $this->template->menu('users');
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <i class="fa fa-external-link-square"></i>
-                            Lista de clientes
-                            <div class="panel-tools">
-                                <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-                                </a>
-                                <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
-                                    <i class="fa fa-wrench"></i>
-                                </a>
-                                <a class="btn btn-xs btn-link panel-refresh" href="#">
-                                    <i class="fa fa-refresh"></i>
-                                </a>
-                                <a class="btn btn-xs btn-link panel-expand" href="#">
-                                    <i class="fa fa-resize-full"></i>
-                                </a>
-                                <a class="btn btn-xs btn-link panel-close" href="#">
-                                    <i class="fa fa-times"></i>
-                                </a>
-                            </div>
+                            Lista de Funcionários
                         </div>
                         <div class="panel-body">
                             <?php if(isset($users)) : ?>
@@ -113,6 +100,7 @@ $this->template->menu('users');
                                     <thead>
                                     <tr>
                                         <th class="center"></th>
+                                        <th>Nome</th>
                                         <th>Login</th>
                                         <th>Foto</th>
                                         <th>Nível de Acesso</th>
@@ -131,12 +119,17 @@ $this->template->menu('users');
                                                 </div></td>
                                             <td>
                                                 <a href="<?php echo base_url('user/edit/'.$user['id']) ?>">
+                                                    <?php echo $user['nome']; ?>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="<?php echo base_url('user/edit/'.$user['id']) ?>">
                                                     <?php echo $user['login']; ?>
                                                 </a>
                                             </td>
                                             <td>FOTO</td>
                                             <td><?php echo $level_list[$user['level']]; ?></td>
-                                            <td><?php echo date("j/m/Y, g:i a", strtotime($user['date_created'])); ?></td>
+                                            <td><?php echo date("d/m/Y, g:i a", strtotime($user['date_created'])); ?></td>
                                             <td class="center">
                                                 <div class="visible-md visible-lg hidden-sm hidden-xs">
                                                     <a href="<?php echo base_url('user/edit/'.$user['id']) ?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar"><i class="fa fa-edit"></i></a>
@@ -162,3 +155,4 @@ $this->template->menu('users');
     <!-- end: PAGE -->
 </div>
 </body>
+<?php endif ?>
