@@ -45,7 +45,8 @@ class Lawsuit extends CI_Controller {
 
 		$this->load->model('cliente_model');
 		$this->load->model('user_model');
-        
+        $this->load->model('lawsuit_status_model');
+		
 		$customers = $this->cliente_model->get();
 		
 		$breadcrumbs = array(
@@ -58,6 +59,10 @@ class Lawsuit extends CI_Controller {
 		$data['customers'] = array( '' => 'Selecione um cliente...' );
 		foreach( $customers as $customer ) $data['customers'][$customer['id']] = $customer['nome'];
 		
+		$_status = $this->lawsuit_status_model->get();
+		$data['status'] = array( '' => 'Selecione um status...' );
+		foreach( $_status as $status ) $data['status'][$status['id']] = $status['status'];
+		
 		$users = $this->user_model->get();
 		$data['lawyers'] = array( '' => 'Selecione um advogado...' );
 		foreach( $users as $user ) $data['lawyers'][$user['id']] = $user['nome'];
@@ -65,6 +70,7 @@ class Lawsuit extends CI_Controller {
 		// Foo data
 		$data['code'] 	   = '';
 		$data['customer']  = '';
+		$data['status_id'] = '';
 		$data['lawyer']    = '';
 		$data['esp']	   = '';
 		$data['startDate'] = '';
@@ -80,6 +86,7 @@ class Lawsuit extends CI_Controller {
 		$this->load->model('lawsuit_model');
 		$this->load->model('cliente_model');
 		$this->load->model('user_model');
+		$this->load->model('lawsuit_status_model');
 		
 		$lawsuit = $this->lawsuit_model->get($id);
         
@@ -99,12 +106,17 @@ class Lawsuit extends CI_Controller {
 		$data['lawyers'] = array( '' => 'Selecione um advogado...' );
 		foreach( $users as $user ) $data['lawyers'][$user['id']] = $user['nome'];
 		
+		$_status = $this->lawsuit_status_model->get();
+		$data['status'] = array( '' => 'Selecione um status...' );
+		foreach( $_status as $status ) $data['status'][$status['id']] = $status['status'];
+		
 		// Loaded data
 		$data['id']		   = $id;
 		$data['code'] 	   = $lawsuit['code'];
 		$data['customer']  = $lawsuit['cliente_id'];
 		$data['lawyer']    = $lawsuit['user_id'];
 		$data['esp']	   = $lawsuit['type'];
+		$data['status_id'] = $lawsuit['status_id'];
 		$data['startDate'] = implode('/',array_reverse(explode('-',$lawsuit['start_date'])));
 		$data['note']	   = $lawsuit['note'];
 
@@ -129,6 +141,7 @@ class Lawsuit extends CI_Controller {
             'code'       => $this->input->post('code'),
             'cliente_id' => $this->input->post('cliente_id'),
             'user_id'    => $this->input->post('user_id'),
+            'status_id'  => $this->input->post('status_id'),
             'type'       => $this->input->post('type'),
             'note'       => $this->input->post('note'),
             'start_date' => $start_date,

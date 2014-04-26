@@ -118,6 +118,7 @@ $this->template->menu('clientes');
                                         <th>ESP</th>
                                         <th>Procuração</th>
                                         <th>DER</th>
+                                        <th>Status</th>
                                         <th>Ações</th>
                                     </tr>
                                     </thead>
@@ -138,6 +139,7 @@ $this->template->menu('clientes');
                                             <td><?php echo $lawsuit['type']; ?></td>
                                             <td><?php echo $lawsuit['lawyer']; ?></td>
                                             <td><?php echo date('d/m/Y', strtotime($lawsuit['start_date'])); ?></td>
+                                            <td align="center"><p class="btn btn-xs" style="background-color: <?php echo $lawsuit['status_color'] ?>; padding: 3px 2px; color: #FFF; width: 50%; text-align: center;"><?php echo $lawsuit['status']; ?></p></td>
                                             <td class="center">
                                                 <div class="visible-md visible-lg hidden-sm hidden-xs">
                                                     <a href="<?php echo base_url('lawsuit/edit/'.$lawsuit['id']) ?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar"><i class="fa fa-edit"></i></a>

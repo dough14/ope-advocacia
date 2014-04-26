@@ -1,18 +1,15 @@
 <?php
-class Lawsuit_model extends CI_Model {
+class Lawsuit_status_model extends CI_Model {
     //cliente levels
     //public $CLIENTE_TIPO_PROCESSO = 1;
 
 	public function get($id = false){
 		
-		$this->db->select('lawsuits.*, user.nome AS lawyer, cliente.nome AS customer, lawsuits_status.status as status, lawsuits_status.color as status_color');
-		$this->db->from('lawsuits');
-		$this->db->join('cliente', 'cliente.id = lawsuits.cliente_id', 'LEFT');
-		$this->db->join('user', 'user.id = lawsuits.user_id', 'LEFT');
-		$this->db->join('lawsuits_status', 'lawsuits_status.id = lawsuits.status_id', 'LEFT');
+		$this->db->select('*');
+		$this->db->from('lawsuits_status');
 		
-		if ($id) $this->db->where('lawsuits.id', $id);
-		$this->db->order_by('lawsuits.start_date', 'desc');
+		if ($id) $this->db->where('id', $id);
+		$this->db->order_by('status', 'asc');
 		
 		$entries = $this->db->get();
 		

@@ -102,7 +102,6 @@ $this->template->menu('clientes');
                                 <th>Data de Nascimento</th>
                                 <th>Data de Cadastro</th>
                                 <th>Ultima Atualização</th>
-                                <th>Status do Processo</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
@@ -122,8 +121,7 @@ $this->template->menu('clientes');
                                 <td><?php echo $cliente['cpf']; ?></td>
                                 <td><?php echo date("d/m/Y", strtotime($cliente['data_nasc'])); ?></td>
                                 <td><?php echo date("d/m/Y, g:i a", strtotime($cliente['date_created'])); ?></td>
-                                <td>Feb 18</td>
-                                <td><span class="label label-sm label-inverse">Flagged</span></td>
+                                <td><?php echo date("d/m/Y, g:i a", strtotime($cliente['updated_at'])); ?></td>
                                 <td class="center">
                                     <div class="visible-md visible-lg hidden-sm hidden-xs">
                                         <a href="<?php echo base_url('cliente/edit/'.$cliente['id']) ?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar"><i class="fa fa-edit"></i></a>

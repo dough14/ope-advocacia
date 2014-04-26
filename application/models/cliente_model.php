@@ -5,7 +5,7 @@ class Cliente_model extends CI_Model {
 
 	public function get($id = false){
 		if ($id) $this->db->where('id', $id);
-		$this->db->order_by('nome', 'asc');
+		$this->db->order_by('nome', 'asc')->where('deleted_at IS NULL', NULL);
 		$get = $this->db->get('cliente');
 		if($id) return $get->row_array();
 		if($get->num_rows > 0) return $get->result_array();
@@ -52,6 +52,6 @@ class Cliente_model extends CI_Model {
 /*TODO delete changing the flag status*/
     public function delete($id){
         $this->db->where('id', $id);
-        $this->db->delete('cliente');
+        $this->db->update('cliente', array('deleted_at' => date('Y-m-d H:i:s')));
     }
 }
