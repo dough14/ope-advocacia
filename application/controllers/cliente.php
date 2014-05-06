@@ -105,8 +105,11 @@ class Cliente extends CI_Controller {
         $this->load->model('cliente_model');
 
         $data_nasc = $this->input->post('data_nasc');
-        $data_nasc = date('Y-m-d', strtotime(str_replace('-', '/', $data_nasc)));
-        //echo $data_nasc.'<br>';
+        //echo $data_nasc.'<br>';exit;
+        $data_nasc = DateTime::createFromFormat('d/m/Y', $data_nasc);
+        $data_nasc = $data_nasc->format('Y-m-d');
+        //$data_nasc = date('Y-m-d', strtotime(str_replace('-', '/', $data_nasc)));
+        //echo $data_nasc.'<br>';exit;
 
         $sql_data = array(
             'nome'               => $this->input->post('nome'),

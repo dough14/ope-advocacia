@@ -32,15 +32,14 @@ class calendar_model extends CI_Model {
 	}
 
     public function update($id, $data){
-        //@TODO
+        $this->db->where('id', $id);
+        $update = $this->db->update('calendar', $data);
 
-        //return $update;
+        return $update;
     }
 
     public function delete($id){
-        //@TODO
-
-        /*$this->db->where('id', $id);
-        $this->db->delete('user');*/
+        $this->db->where('id', $id);
+        $this->db->delete('calendar');
     }
 }

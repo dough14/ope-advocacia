@@ -93,7 +93,7 @@ $this->template->menu('clientes');
                                             Nome <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-9">
-											<?php echo form_input(array('name'=>'nome','value'=>$nome,'class'=>'form-control')); ?>
+											<?php echo form_input(array('name'=>'nome','value'=>$nome,'class'=>'form-control', 'required'=>'')); ?>
 										</div>
                                     </div>
                                     <div class="form-group">
@@ -101,7 +101,7 @@ $this->template->menu('clientes');
                                             CPF <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-9">
-											<?php echo form_input(array('name'=>'cpf','value'=>$cpf,'class'=>'form-control','data-mask'=>'taxvat')); ?>
+											<?php echo form_input(array('name'=>'cpf','value'=>$cpf,'class'=>'form-control','data-mask'=>'taxvat', 'required'=>'')); ?>
 										</div>
                                     </div>
                                     <div class="form-group">
@@ -110,7 +110,7 @@ $this->template->menu('clientes');
                                         </label>
                                         <div class="col-sm-9">
                                             <?php $data_nasc = date('d/m/Y', strtotime(str_replace('-', '/', $data_nasc))); ?>
-											<?php echo form_input(array('name'=>'data_nasc','value'=>$data_nasc,'class'=>'form-control','data-mask'=>'dob')); ?>
+											<?php echo form_input(array('name'=>'data_nasc','value'=>$data_nasc,'class'=>'form-control','data-mask'=>'dob', 'required'=>'')); ?>
 										</div>
                                     </div>
                                     <div class="form-group">
@@ -118,7 +118,7 @@ $this->template->menu('clientes');
                                             Telefone <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-9">
-											<?php echo form_input(array('name'=>'tel','value'=>$tel,'class'=>'form-control','data-mask'=>'phone')); ?>
+											<?php echo form_input(array('name'=>'tel','value'=>$tel,'class'=>'form-control','data-mask'=>'phone', 'required'=>'')); ?>
 										</div>
                                     </div>
                                     <div class="form-group">
@@ -160,7 +160,7 @@ $this->template->menu('clientes');
                                             Endereço <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-9">
-											<?php echo form_input(array('name'=>'endereco','value'=>$endereco,'class'=>'form-control')); ?>
+											<?php echo form_input(array('name'=>'endereco','value'=>$endereco,'class'=>'form-control', 'required'=>'')); ?>
 										</div>
                                     </div>
 
@@ -169,7 +169,7 @@ $this->template->menu('clientes');
                                             CEP <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-9">
-											<?php echo form_input(array('name'=>'cep','value'=>$cep,'class'=>'form-control','data-mask'=>'postcode')); ?>
+											<?php echo form_input(array('name'=>'cep','value'=>$cep,'class'=>'form-control','data-mask'=>'postcode', 'required'=>'')); ?>
 										</div>
                                     </div>
                                 </div>

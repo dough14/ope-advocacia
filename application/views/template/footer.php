@@ -45,11 +45,7 @@
             <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
             <!-- end: MAIN JAVASCRIPTS -->
             <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-            <script src="<?php echo base_url(); ?>assets/plugins/flot/jquery.flot.js"></script>
-            <script src="<?php echo base_url(); ?>assets/plugins/flot/jquery.flot.pie.js"></script>
-            <script src="<?php echo base_url(); ?>assets/plugins/flot/jquery.flot.resize.min.js"></script>
             <script src="<?php echo base_url(); ?>assets/plugins/jquery.sparkline/jquery.sparkline.js"></script>
-            <script src="<?php echo base_url(); ?>assets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
             <script src="<?php echo base_url(); ?>assets/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
             <script src="<?php echo base_url(); ?>assets/plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
             <script src="<?php echo base_url(); ?>assets/js/index.js"></script>

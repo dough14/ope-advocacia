@@ -38,7 +38,6 @@ class User extends CI_Controller {
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
         $data['users'] = $this->user_model->get(false);
         $data['level_list'] = $this->LEVEL;
-
         $data['page_title']  = "Users";
 
         // Load View
@@ -58,6 +57,7 @@ class User extends CI_Controller {
         $data['page_title']  = "Novo funcionário";
         $data['nome']    = '';
         $data['login']    = '';
+        $data['color']    = '';
         $data['telefone']    = '';
         $data['email']    = '';
         $data['password'] = '';
@@ -101,7 +101,8 @@ class User extends CI_Controller {
             'login'    => $this->input->post('login'),
             'telefone' => $this->input->post('telefone'),
             'email'    => $this->input->post('email'),
-            'level'    => $this->input->post('level')
+            'level'    => $this->input->post('level'),
+            'color'    => $this->input->post('color')
         );
 
         if($this->input->post('reset_password')){

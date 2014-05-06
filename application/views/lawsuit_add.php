@@ -94,7 +94,7 @@ $this->template->menu('lawsuits');
                                                     NB Nº <span class="symbol required"></span>
                                                 </label>
 												<div class="col-sm-9">
-													<?php echo form_input(array('name'=>'code','value'=>$code,'class'=>'form-control', 'placeholder'=>'Digite a NB')); ?>
+													<?php echo form_input(array('name'=>'code','value'=>$code,'class'=>'form-control required', 'placeholder'=>'Digite a NB', 'required'=>'')); ?>
 												</div>
                                             </div>
                                             <div class="form-group">
@@ -118,7 +118,7 @@ $this->template->menu('lawsuits');
                                                     ESP <span class="symbol required"></span>
                                                 </label>
 												<div class="col-sm-9">
-													<?php echo form_input(array('name'=>'type','value'=>$esp,'class'=>'form-control')) ?>
+													<?php echo form_input(array('name'=>'type','value'=>$esp,'class'=>'form-control', 'required'=>'')) ?>
 												</div>
                                             </div>
                                             <div class="form-group">
@@ -126,7 +126,7 @@ $this->template->menu('lawsuits');
                                                     DER <span class="symbol required"></span>
                                                 </label>
 												<div class="col-sm-9">
-													<?php echo form_input(array('name'=>'start_date','value'=>$startDate,'class'=>'form-control','data-mask'=>'dob')) ?>
+													<?php echo form_input(array('name'=>'start_date','value'=>$startDate,'class'=>'form-control','data-mask'=>'dob', 'required'=>'')) ?>
 												</div>
                                             </div>
 											<div class="form-group">

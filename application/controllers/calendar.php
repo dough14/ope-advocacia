@@ -95,10 +95,10 @@ class Calendar extends CI_Controller {
         $this->load->model('calendar_model');
 
         $startDate = $this->input->post('startDate');
-        $startDate = date('Y-m-d', strtotime(str_replace('-', '/', $startDate)));
+        $startDate = date('Y-m-d h:i:s', strtotime(str_replace('-', '/', $startDate)));
 
         $endDate = $this->input->post('endDate');
-        $endDate = date('Y-m-d', strtotime(str_replace('-', '/', $endDate)));
+        $endDate = date('Y-m-d h:i:s', strtotime(str_replace('-', '/', $endDate)));
         //echo $data_nasc.'<br>';
 
         $sql_data = array(
@@ -120,6 +120,12 @@ class Calendar extends CI_Controller {
         redirect('calendar');
     }
 
+    public function remove($id){
+        $this->load->model('calendar_model');
+        $this->calendar_model->delete($id);
+
+        redirect('calendar');
+    }
 }
 
 ?>

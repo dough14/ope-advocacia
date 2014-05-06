@@ -97,7 +97,7 @@
                                                     Nome <span class="symbol required"></span>
                                                 </label>
                                                 <div class="col-sm-9">
-                                                    <?php echo form_input(array('name'=>'nome','value'=>$nome,'class'=>'form-control')); ?>
+                                                    <?php echo form_input(array('name'=>'nome','value'=>$nome,'class'=>'form-control', 'required'=>'')); ?>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -105,7 +105,7 @@
                                                     Telefone para contato
                                                 </label>
                                                 <div class="col-sm-9">
-                                                    <?php echo form_input(array('name'=>'telefone','value'=>$telefone,'class'=>'form-control','data-mask'=>'phone')); ?>
+                                                    <?php echo form_input(array('name'=>'telefone','value'=>$telefone,'class'=>'form-control','data-mask'=>'phone', 'required'=>'')); ?>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -113,7 +113,21 @@
                                                     Email
                                                 </label>
                                                 <div class="col-sm-9">
-                                                    <?php echo form_input(array('name'=>'email','value'=>$email,'class'=>'form-control')); ?>
+                                                    <?php echo form_input(array('name'=>'email','value'=>$email,'class'=>'form-control', 'required'=>'')); ?>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">
+                                                    Cor de evento
+                                                </label>
+                                                <!-- COLORPICKER @FIXIT -->
+                                                <div class="col-sm-9" style="display: none">
+                                                    <?php //echo form_input(array('name'=>'color','value'=>   $color,'class'=>'form-control color', 'required'=>'')); ?>
+                                                    <script>
+                                                        $(function(){
+                                                            $('.color').colorpicker();
+                                                        });
+                                                    </script>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -121,7 +135,7 @@
                                                     Login <span class="symbol required"></span>
                                                 </label>
                                                 <div class="col-sm-9">
-                                                    <?php echo form_input(array('name'=>'login','value'=>$login,'class'=>'form-control')); ?>
+                                                    <?php echo form_input(array('name'=>'login','value'=>$login,'class'=>'form-control', 'required'=>'')); ?>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -133,7 +147,7 @@
 														<?php echo form_password(array('name'=>'password', 'value'=>$password, 'id'=>'password','disabled'=>'disabled','class'=>'form-control')); ?>
 														<?php echo form_checkbox(array('name'=>'reset_password','value'=>1,'id'=>'reset_password','title'=>'Edit Password','class'=>'form-control')); ?>
 													<?php } else { ?>
-														<?php echo form_password(array('name'=>'password','value'=>$password,'id'=>'password','class'=>'form-control')); ?>
+														<?php echo form_password(array('name'=>'password','value'=>$password,'id'=>'password','class'=>'form-control', 'required'=>'')); ?>
 														<?php echo form_hidden('reset_password', 1); ?>
 													<?php } ?>
 												</div>
@@ -179,5 +193,6 @@
         </div>
     </div>
 </div>
+<script src="<?php echo base_url(); ?>assets/plugins/bootstrapstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
 </body>
 <?php endif ?>

@@ -128,22 +128,6 @@ $this->template->menu('dashboard');
                         <div class="panel-heading">
                             <i class="clip-calendar"></i>
                             Calendário
-                            <div class="panel-tools">
-                                <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-                                </a>
-                                <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
-                                    <i class="fa fa-wrench"></i>
-                                </a>
-                                <a class="btn btn-xs btn-link panel-refresh" href="#">
-                                    <i class="fa fa-refresh"></i>
-                                </a>
-                                <a class="btn btn-xs btn-link panel-expand" href="#">
-                                    <i class="fa fa-resize-full"></i>
-                                </a>
-                                <a class="btn btn-xs btn-link panel-close" href="#">
-                                    <i class="fa fa-times"></i>
-                                </a>
-                            </div>
                         </div>
                         <div class="panel-body">
 
@@ -154,13 +138,14 @@ $this->template->menu('dashboard');
                                             <?php foreach( $events as $event ): ?>
                                             <?php
                                                 $startDate = new DateTime($event->startDate);
+                                                //var_dump($event);
                                                 $_startMonth = new DateInterval('P1M');
                                                 $startDate->sub($_startMonth);
                                                 $_startMonth = $startDate->format('m');
                                             ?>
-                                            {
+                                            {   allDay: false,
                                                 title: '<?php echo $event->title ?>',
-                                                start: new Date(<?php echo $startDate->format('Y') ?>, <?php echo $_startMonth == 12 ? 0 : $_startMonth ?>, <?php echo $startDate->format('d') ?>),
+                                                start: new Date('<?php echo $startDate->format('Y-m-d h:i:s') ?>'),
                                                 <?php if( !empty($event->endDate) ): ?>
                                                 <?php
                                                     $endDate   = new DateTime($event->endDate);
@@ -168,20 +153,21 @@ $this->template->menu('dashboard');
                                                     $endDate->sub($_endMonth);
                                                     $_endMonth = $endDate->format('m');
                                                 ?>
-                                                end: new Date(<?php echo $endDate->format('Y') ?>, <?php echo $_endMonth == 12 ? 0 : $_endMonth ?>, <?php echo $endDate->format('d') ?>)
+                                                end: new Date('<?php echo $endDate->format('Y-m-d h:i:s') ?>'),
                                                 <?php endif ?>
                                             },
                                             <?php endforeach ?>
                                         ],
                                         titleFormat: {
-                                            month: 'MMM yyyy',
-                                            day: 'd MMM'
+                                            month: 'MMMM yyyy',
+                                            week: "MMMM d[ yyyy]{ '&#8212;'[ MMMM] d yyyy}",
+                                            day: 'd MMMM'
                                         },
                                         header: {
                                             left: 'prev,next today',
                                             center: 'title',
                                             //right: 'month,agendaWeek,agendaDay'
-                                            right: 'month,agendaDay'
+                                            right: 'month,agendaWeek,agendaDay'
                                         },
                                         timeFormat: {
                                             agenda: 'h(:mm)t{ - h(:mm)t}',
