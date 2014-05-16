@@ -12,26 +12,6 @@
 <?php if($this->session->userdata('user') == 5):
     $this->template->menu('users');
 ?>
-<body>
-<!-- start: HEADER -->
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <!-- start: TOP NAVIGATION CONTAINER -->
-    <div class="container">
-        <div class="navbar-header">
-            <!-- start: RESPONSIVE MENU TOGGLER -->
-            <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-                <span class="clip-list-2"></span>
-            </button>
-            <!-- end: RESPONSIVE MENU TOGGLER -->
-            <!-- start: LOGO -->
-            <!-- end: LOGO -->
-        </div>
-        <div class="navbar-tools">
-        </div>
-    </div>
-    <!-- end: TOP NAVIGATION CONTAINER -->
-</div>
-<!-- end: HEADER -->
 <!-- start: MAIN CONTAINER -->
 <div class="main-container">
     <div class="navbar-content">

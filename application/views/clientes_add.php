@@ -9,12 +9,6 @@
 // Load Menu
 $this->template->menu('clientes');
 ?>
-<body>
-<!-- start: HEADER -->
-<div class="navbar navbar-inverse navbar-fixed-top">
-<!-- start: NOTIFICATION DROPDOWN -->
-</div>
-<!-- end: HEADER -->
 <!-- start: MAIN CONTAINER -->
 <div class="main-container">
     <div class="navbar-content">
@@ -67,7 +61,18 @@ $this->template->menu('clientes');
                     <div class="panel panel-default">
                     <div class="panel-heading">
                         <i class="fa fa-external-link-square"></i>
-                        Formulário de clientes
+                        Formulário de clientes<?php if(isset($_GET["view"])): ?>
+                                                     - Pessoa Jurídica
+                                                <?php else: ?>
+                                                     - Pessoa Física
+                                                <?php endif ?>
+                        <div class="panel-tools">
+                            <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+                            </a>
+                            <a class="btn btn-xs btn-link panel-expand" href="#">
+                                <i class="fa fa-resize-full"></i>
+                            </a>
+                        </div>
                     </div>
                     <div class="panel-body">
                         <h2><i class="fa fa-pencil-square teal"></i>

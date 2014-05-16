@@ -51,3 +51,14 @@
 </head>
 <!-- end: HEAD -->
 <!-- start: BODY -->
+<?php if(!$this->session->userdata('logged')):?>
+<body class="login example2 footer-fixed">
+<?php else: ?>
+<body class="footer-fixed">
+<?php endif ?>
+<!-- start: HEADER -->
+<div class="navbar navbar-inverse navbar-fixed-top hidden-xs">
+    <a style="float:left; width:175px;" href="<?php echo base_url('dashboard'); ?>"><img src="<?php echo base_url() ?>assets/images/logo.png"></a>
+    <!-- start: NOTIFICATION DROPDOWN -->
+</div>
+<!-- end: HEADER -->

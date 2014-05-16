@@ -10,12 +10,6 @@
 // Load Menu
 $this->template->menu('lawsuits');
 ?>
-<body>
-<!-- start: HEADER -->
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <!-- start: NOTIFICATION DROPDOWN -->
-</div>
-<!-- end: HEADER -->
 <!-- start: MAIN CONTAINER -->
 <div class="main-container">
     <div class="navbar-content">
@@ -183,27 +177,4 @@ $this->template->menu('lawsuits');
         </div>
     </div>
 </div>
-<script src="<?php echo base_url(); ?>assets/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/plugins/blockUI/jquery.blockUI.js"></script>
-<script src="<?php echo base_url(); ?>assets/plugins/iCheck/jquery.icheck.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
-<script src="<?php echo base_url(); ?>assets/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-<script src="<?php echo base_url(); ?>assets/plugins/less/less-1.5.0.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/plugins/jquery-cookie/jquery.cookie.js"></script>
-<script src="<?php echo base_url(); ?>assets/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/main.js"></script>
-<script src="<?php echo base_url(); ?>assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/plugins/summernote/build/summernote.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/plugins/ckeditor/ckeditor.js"></script>
-<script src="<?php echo base_url(); ?>assets/plugins/ckeditor/adapters/jquery.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/form-validation.js"></script>
-<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-<script>
-	jQuery(document).ready(function() {
-		Main.init();
-		FormValidator.init();
-	});
-</script>
 </body>

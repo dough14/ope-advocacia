@@ -11,9 +11,9 @@ $menus = array(
     'dashboard' => array('url'=>'dashboard', 'label'=>'Painel de controle', 'icon'=>'clip-home-2'),
     'cliente'   => array(
         'url'   =>'cliente',
-        'label' =>'Cliente',
+        'label' =>'Clientes',
         'icon'  =>'clip-users-3',
-        'childs'=> array ('add' => array('url' => 'cliente/add', 'label' => 'Adicionar Cliente'))
+        'childs'=> array ('add' => array('url' => 'cliente/add', 'label' => '<i class="clip-users-3"></i> Adicionar Cliente - PF'), 'add2' => array('url' => 'cliente/add'.'?view=pj', 'label' => '<i class="clip-user-5"></i> Adicionar Cliente - PJ')),
     ),
     'user'   => array(
         'url'   =>'user',
@@ -43,8 +43,8 @@ $menus = array(
     <!-- start: SIDEBAR -->
     <div class="main-navigation navbar-collapse collapse">
     <!-- start: MAIN MENU TOGGLER BUTTON -->
-        <div>
-            <a style="float:left; width:175px;" href="<?php echo base_url('dashboard'); ?>"><img src="<?php echo base_url() ?>assets/images/logo.png"></a>
+        <div class="hidden-xs">
+
         </div>
         <div class="navigation-toggler">
             <i class="clip-chevron-left"></i>

@@ -49,6 +49,7 @@
             <script src="<?php echo base_url(); ?>assets/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
             <script src="<?php echo base_url(); ?>assets/plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
             <script src="<?php echo base_url(); ?>assets/js/index.js"></script>
+            <script src="<?php echo base_url(); ?>assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
             <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
             <script>
                 jQuery(document).ready(function() {

@@ -9,26 +9,6 @@
 // Load Menu
 $this->template->menu('clientes');
 ?>
-<body>
-<!-- start: HEADER -->
-<div class="navbar navbar-inverse navbar-fixed-top">
-<!-- start: TOP NAVIGATION CONTAINER -->
-<div class="container">
-<div class="navbar-header">
-    <!-- start: RESPONSIVE MENU TOGGLER -->
-    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-        <span class="clip-list-2"></span>
-    </button>
-    <!-- end: RESPONSIVE MENU TOGGLER -->
-    <!-- start: LOGO -->
-    <!-- end: LOGO -->
-</div>
-<div class="navbar-tools">
-</div>
-</div>
-<!-- end: TOP NAVIGATION CONTAINER -->
-</div>
-<!-- end: HEADER -->
 <!-- start: MAIN CONTAINER -->
 <div class="main-container">
 <div class="navbar-content">
@@ -89,6 +69,13 @@ $this->template->menu('clientes');
             <div class="panel-heading">
                 <i class="fa fa-external-link-square"></i>
                 Lista de clientes
+                <div class="panel-tools">
+                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+                    </a>
+                    <a class="btn btn-xs btn-link panel-expand" href="#">
+                        <i class="fa fa-resize-full"></i>
+                    </a>
+                </div>
             </div>
             <div class="panel-body">
                 <?php if(isset($clientes)) : ?>
@@ -100,8 +87,8 @@ $this->template->menu('clientes');
                                 <th>Nome</th>
                                 <th>CPF</th>
                                 <th>Data de Nascimento</th>
-                                <th>Data de Cadastro</th>
-                                <th>Ultima Atualização</th>
+                                <th class="hidden-xs">Data de Cadastro</th>
+                                <th class="hidden-xs">Ultima Atualização</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
@@ -120,16 +107,16 @@ $this->template->menu('clientes');
                                     </a></td>
                                 <td><?php echo $cliente['cpf']; ?></td>
                                 <td><?php echo date("d/m/Y", strtotime($cliente['data_nasc'])); ?></td>
-                                <td><?php echo date("d/m/Y, g:i a", strtotime($cliente['date_created'])); ?></td>
-                                <td><?php echo date("d/m/Y, g:i a", strtotime($cliente['updated_at'])); ?></td>
+                                <td class="hidden-xs"><?php echo date("d/m/Y, g:i a", strtotime($cliente['date_created'])); ?></td>
+                                <td class="hidden-xs"><?php echo date("d/m/Y, g:i a", strtotime($cliente['updated_at'])); ?></td>
                                 <td class="center">
-                                    <div class="visible-md visible-lg hidden-sm hidden-xs">
+                                    <div class="hidden-xs">
                                         <a href="<?php echo base_url('cliente/edit/'.$cliente['id']) ?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar"><i class="fa fa-edit"></i></a>
                                         <?php if($this->session->userdata('user') == 5): ?>
                                             <a href="<?php echo base_url('cliente/remove/'.$cliente['id']) ?>" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remover"><i class="fa fa-times fa fa-white"></i></a>
                                         <?php endif ?>
                                     </div>
-                                    <div class="visible-xs visible-sm hidden-md hidden-lg">
+                                    <div class="visible-xs hidden-sm hidden-md hidden-lg">
                                         <div class="btn-group">
                                             <a class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
                                                 <i class="fa fa-cog"></i> <span class="caret"></span>

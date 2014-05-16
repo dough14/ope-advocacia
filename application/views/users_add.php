@@ -13,12 +13,6 @@
 <?php if($this->session->userdata('user') == 5):
     $this->template->menu('users');
 ?>
-<body>
-<!-- start: HEADER -->
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <!-- start: NOTIFICATION DROPDOWN -->
-</div>
-<!-- end: HEADER -->
 <!-- start: MAIN CONTAINER -->
 <div class="main-container">
     <div class="navbar-content">
@@ -121,13 +115,8 @@
                                                     Cor de evento
                                                 </label>
                                                 <!-- COLORPICKER @FIXIT -->
-                                                <div class="col-sm-9" style="display: none">
-                                                    <?php //echo form_input(array('name'=>'color','value'=>   $color,'class'=>'form-control color', 'required'=>'')); ?>
-                                                    <script>
-                                                        $(function(){
-                                                            $('.color').colorpicker();
-                                                        });
-                                                    </script>
+                                                <div class="col-sm-9">
+                                                    <?php echo form_input(array('type'=>'color','name'=>'color','value'=>$color,'class'=>'form-control color', 'required'=>'')); ?>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -193,6 +182,5 @@
         </div>
     </div>
 </div>
-<script src="<?php echo base_url(); ?>assets/plugins/bootstrapstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
 </body>
 <?php endif ?>

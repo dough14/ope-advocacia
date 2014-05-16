@@ -9,26 +9,6 @@
 // Load Menu
 $this->template->menu(NULL);
 ?>
-<body>
-<!-- start: HEADER -->
-<div class="navbar navbar-inverse navbar-fixed-top">
-<!-- start: TOP NAVIGATION CONTAINER -->
-<div class="container">
-<div class="navbar-header">
-    <!-- start: RESPONSIVE MENU TOGGLER -->
-    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-        <span class="clip-list-2"></span>
-    </button>
-    <!-- end: RESPONSIVE MENU TOGGLER -->
-    <!-- start: LOGO -->
-    <!-- end: LOGO -->
-</div>
-<div class="navbar-tools">
-</div>
-</div>
-<!-- end: TOP NAVIGATION CONTAINER -->
-</div>
-<!-- end: HEADER -->
 <!-- start: MAIN CONTAINER -->
 <div class="main-container">
 <div class="navbar-content">
@@ -118,7 +98,6 @@ $this->template->menu(NULL);
                                 <th>Data de Nascimento</th>
                                 <th>Data de Cadastro</th>
                                 <th>Ultima Atualização</th>
-                                <th>Status do Processo</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
@@ -138,8 +117,7 @@ $this->template->menu(NULL);
                                 <td><?php echo $cliente['cpf']; ?></td>
                                 <td><?php echo date('d/m/Y', strtotime($cliente['data_nasc'])); ?></td>
                                 <td><?php echo date('d/m/Y - H:i:s', strtotime($cliente['date_created'])); ?></td>
-                                <td>Feb 18</td>
-                                <td><span class="label label-sm label-inverse">Flagged</span></td>
+                                <td><?php echo date("d/m/Y, g:i a", strtotime($cliente['updated_at'])); ?></td>
                                 <td class="center">
                                     <div class="visible-md visible-lg hidden-sm hidden-xs">
                                         <a href="<?php echo base_url('cliente/edit/'.$cliente['id']) ?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar"><i class="fa fa-edit"></i></a>

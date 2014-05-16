@@ -6,7 +6,7 @@
  * Time: 16:03
  */
 ?>
-<body class="login example2 footer-fixed">
+
 <div class="container">
     <div class="row">
     <div class="main-login col-sm-4 col-sm-offset-4">
@@ -24,13 +24,13 @@
                 <fieldset>
                     <div class="form-group">
                         <span class="input-icon">
-                            <input type="text" class="form-control login" name="username" placeholder="Login">
+                            <input type="text" class="form-control login" name="username" placeholder="Login" required>
                             <i class="fa fa-user"></i>
                         </span>
                     </div>
                     <div class="form-group form-actions">
                         <span class="input-icon">
-                            <input type="password" class="form-control password" name="password" placeholder="Senha">
+                            <input type="password" class="form-control password" name="password" placeholder="Senha" required>
                             <i class="fa fa-lock"></i>
                         </span>
                     </div>

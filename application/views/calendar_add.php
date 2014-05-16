@@ -10,12 +10,6 @@
 // Load Menu
 $this->template->menu('users');
 ?>
-<body>
-<!-- start: HEADER -->
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <!-- start: NOTIFICATION DROPDOWN -->
-</div>
-<!-- end: HEADER -->
 <!-- start: MAIN CONTAINER -->
 <div class="main-container">
     <div class="navbar-content">

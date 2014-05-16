@@ -12,26 +12,6 @@ $this->template->menu('dashboard');
 ?>
 <?php //var_dump($this->row);exit; ?>
 
-<body class="footer-fixed">
-<!-- start: HEADER -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-    <!-- start: TOP NAVIGATION CONTAINER -->
-    <div class="container">
-    <div class="navbar-header">
-        <!-- start: RESPONSIVE MENU TOGGLER -->
-        <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-            <span class="clip-list-2"></span>
-        </button>
-        <!-- end: RESPONSIVE MENU TOGGLER -->
-        <!-- start: LOGO -->
-        <!-- end: LOGO -->
-    </div>
-    <div class="navbar-tools">
-
-    </div>
-    </div>
-    <!-- end: TOP NAVIGATION CONTAINER -->
-    </div>
     <div class="main-content">
     <!-- start: PANEL CONFIGURATION MODAL FORM -->
         <div class="modal fade" id="panel-config" tabindex="-1" role="dialog" aria-hidden="true">
