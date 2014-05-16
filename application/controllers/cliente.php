@@ -60,6 +60,8 @@ class Cliente extends CI_Controller {
         $data['page_title']     = "Novo Cliente";
         $data['nome']           = '';
         $data['cpf']            = '';
+        $data['cnpj']           = '';
+        $data['rg']           = '';
         $data['tel']            = '';
         $data['tel2']           = '';
         $data['cel']            = '';
@@ -103,17 +105,21 @@ class Cliente extends CI_Controller {
 
     public function save(){
         $this->load->model('cliente_model');
-
-        $data_nasc = $this->input->post('data_nasc');
-        //echo $data_nasc.'<br>';exit;
-        $data_nasc = DateTime::createFromFormat('d/m/Y', $data_nasc);
-        $data_nasc = $data_nasc->format('Y-m-d');
-        //$data_nasc = date('Y-m-d', strtotime(str_replace('-', '/', $data_nasc)));
-        //echo $data_nasc.'<br>';exit;
-
+        if(isset($data_nasc)){
+            $data_nasc = $this->input->post('data_nasc');
+            //echo $data_nasc.'<br>';exit;
+            $data_nasc = DateTime::createFromFormat('d/m/Y', $data_nasc);
+            $data_nasc = $data_nasc->format('Y-m-d');
+            //$data_nasc = date('Y-m-d', strtotime(str_replace('-', '/', $data_nasc)));
+            //echo $data_nasc.'<br>';exit;
+        }else{
+            $data_nasc = '0000-00-00';
+        }
         $sql_data = array(
             'nome'               => $this->input->post('nome'),
             'cpf'                => $this->input->post('cpf'),
+            'cnpj'               => $this->input->post('cnpj'),
+            'rg'                 => $this->input->post('rg'),
             'tel'                => $this->input->post('tel'),
             'tel2'               => $this->input->post('tel2'),
             'tel_alt'            => $this->input->post('tel_alt'),

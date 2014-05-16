@@ -95,29 +95,54 @@ $this->template->menu('clientes');
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">
-                                            Nome <span class="symbol required"></span>
+                                            Nome <?php if(isset($_GET["view"])) echo ' Fantasia';?><span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-9">
 											<?php echo form_input(array('name'=>'nome','value'=>$nome,'class'=>'form-control', 'required'=>'')); ?>
 										</div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            CPF <span class="symbol required"></span>
-                                        </label>
-                                        <div class="col-sm-9">
-											<?php echo form_input(array('name'=>'cpf','value'=>$cpf,'class'=>'form-control','data-mask'=>'taxvat', 'required'=>'')); ?>
-										</div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Data de Nascimento <span class="symbol required"></span>
-                                        </label>
-                                        <div class="col-sm-9">
-                                            <?php $data_nasc = date('d/m/Y', strtotime(str_replace('-', '/', $data_nasc))); ?>
-											<?php echo form_input(array('name'=>'data_nasc','value'=>$data_nasc,'class'=>'form-control','data-mask'=>'dob', 'required'=>'')); ?>
-										</div>
-                                    </div>
+                                    <?php if(isset($_GET["view"])): ?>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">
+                                                CNPJ <span class="symbol required"></span>
+                                            </label>
+                                            <div class="col-sm-9">
+                                                <?php echo form_input(array('name'=>'cnpj','value'=>$cnpj,'class'=>'form-control','data-mask'=>'cnpj', 'required'=>'')); ?>
+                                            </div>
+                                        </div>
+                                    <?php else: ?>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">
+                                                CPF <span class="symbol required"></span>
+                                            </label>
+                                            <div class="col-sm-9">
+                                                <?php echo form_input(array('name'=>'cpf','value'=>$cpf,'class'=>'form-control','data-mask'=>'taxvat', 'required'=>'')); ?>
+                                            </div>
+                                        </div>
+                                    <?php endif ?>
+                                    <?php if(isset($_GET["view"])): ?>
+                                    <?php else: ?>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">
+                                                RG <span class="symbol required"></span>
+                                            </label>
+                                            <div class="col-sm-9">
+                                                <?php echo form_input(array('name'=>'rg','value'=>$rg,'class'=>'form-control','data-mask'=>'rg', 'required'=>'')); ?>
+                                            </div>
+                                        </div>
+                                    <?php endif ?>
+                                    <?php if(isset($_GET["view"])): ?>
+                                    <?php else: ?>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">
+                                                Data de Nascimento <span class="symbol required"></span>
+                                            </label>
+                                            <div class="col-sm-9">
+                                                <?php $data_nasc = date('d/m/Y', strtotime(str_replace('-', '/', $data_nasc))); ?>
+                                                <?php echo form_input(array('name'=>'data_nasc','value'=>$data_nasc,'class'=>'form-control','data-mask'=>'dob', 'required'=>'')); ?>
+                                            </div>
+                                        </div>
+                                    <?php endif ?>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">
                                             Telefone <span class="symbol required"></span>
