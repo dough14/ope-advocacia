@@ -38,6 +38,7 @@ class Cliente extends CI_Controller {
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
 		$data['search'] = getSearch();
         $data['clientes'] = $this->cliente_model->get(false);
+        $data['clientespj'] = $this->cliente_model->getpj(false);
         $data['tipos_processo'] = $this->tiposProcesso;
 
         $data['page_title']  = "Clientes";
@@ -80,7 +81,11 @@ class Cliente extends CI_Controller {
 
     public function edit($id){
 		$this->load->model('cliente_model');
-        $data = $this->cliente_model->get($id);
+        if(isset($_GET["view"])){
+            $data = $this->cliente_model->getpj($id);
+        }else{
+            $data = $this->cliente_model->get($id);
+        }
 		
         $breadcrumbs = array(
 			array( 'label' => 'Painel de controle', 'url' => base_url() ),

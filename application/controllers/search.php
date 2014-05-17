@@ -26,6 +26,7 @@ class Search extends CI_Controller {
 		$search = $this->input->get('search', TRUE);
 		
 		$data['clientes'] = '';
+        $data['clientespj'] = '';
 		
 		if( strstr($search, '.') ) $data['clientes'] = $this->cliente_model->searchBy('cpf', $search);
 		elseif( strstr($search, '/') ){
@@ -33,6 +34,13 @@ class Search extends CI_Controller {
 			$data['clientes'] = $this->cliente_model->searchBy(array('data_nasc','date_created'), $dob);
 		}elseif( strstr($search, '(') ) $data['clientes'] = $this->cliente_model->searchBy(array('tel', 'tel2', 'cel'), $search);
 		else $data['clientes'] = $this->cliente_model->searchBy('nome', $search);
+
+        if( strstr($search, '.') ) $data['clientespj'] = $this->cliente_model->searchBy('cnpj', $search);
+        elseif( strstr($search, '/') ){
+            $dob = implode('-',array_reverse(explode('/', $search)));
+            $data['clientespj'] = $this->cliente_model->searchBy(array('data_nasc','date_created'), $dob);
+        }elseif( strstr($search, '(') ) $data['clientespj'] = $this->cliente_model->searchBy(array('tel', 'tel2', 'cel'), $search);
+        else $data['clientespj'] = $this->cliente_model->searchBy('nome', $search);
 		
         $data['page_title']  = "Procurar";
 

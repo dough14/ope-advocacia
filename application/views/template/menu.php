@@ -13,7 +13,7 @@ $menus = array(
         'url'   =>'cliente',
         'label' =>'Clientes',
         'icon'  =>'clip-users-3',
-        'childs'=> array ('add' => array('url' => 'cliente/add', 'label' => '<i class="clip-users-3"></i> Adicionar Cliente - PF'), 'add2' => array('url' => 'cliente/add'.'?view=pj', 'label' => '<i class="clip-user-5"></i> Adicionar Cliente - PJ')),
+        'childs'=> array ('add' => array('url' => 'cliente?view=pj', 'label' => '<i class="clip-user-5"></i> Clientes - PJ'), 'add1' => array('url' => 'cliente/add', 'label' => '<i class="clip-users-3"></i> Adicionar Cliente - PF'), 'add2' => array('url' => 'cliente/add'.'?view=pj', 'label' => '<i class="clip-user-5"></i> Adicionar Cliente - PJ')),
     ),
     'user'   => array(
         'url'   =>'user',

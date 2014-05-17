@@ -3,15 +3,24 @@ class Cliente_model extends CI_Model {
     //cliente levels
     //public $CLIENTE_TIPO_PROCESSO = 1;
 
-	public function get($id = false){
-		if ($id) $this->db->where('id', $id);
-		$this->db->order_by('nome', 'asc')->where('deleted_at IS NULL', NULL);
-		$get = $this->db->get('cliente');
-		if($id) return $get->row_array();
-		if($get->num_rows > 0) return $get->result_array();
+    public function get($id = false){
+        if ($id) $this->db->where('id', $id);
+        $this->db->order_by('nome', 'asc')->where('deleted_at IS NULL', NULL)->where('cpf != 0');
+        $get = $this->db->get('cliente');
+        if($id) return $get->row_array();
+        if($get->num_rows > 0) return $get->result_array();
 
-		return array();
-	}
+        return array();
+    }
+    public function getpj($id = false){
+        if ($id) $this->db->where('id', $id);
+        $this->db->order_by('nome', 'asc')->where('deleted_at IS NULL', NULL)->where('cpf = 0');
+        $get = $this->db->get('cliente');
+        if($id) return $get->row_array();
+        if($get->num_rows > 0) return $get->result_array();
+
+        return array();
+    }
 	
 	public function searchBy($field = NULL, $value = NULL){
 		if( empty($field) || empty($value) ) return FALSE;
