@@ -232,7 +232,6 @@ $this->template->menu('clientes');
         <?php endif ?>
     </div>
     <!-- end: RESPONSIVE TABLE PANEL -->
-    </div>
 </div>
 <!-- end: PAGE CONTENT-->
 

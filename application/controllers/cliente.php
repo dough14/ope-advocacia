@@ -62,7 +62,7 @@ class Cliente extends CI_Controller {
         $data['nome']           = '';
         $data['cpf']            = '';
         $data['cnpj']           = '';
-        $data['rg']           = '';
+        $data['rg']             = '';
         $data['tel']            = '';
         $data['tel2']           = '';
         $data['cel']            = '';
@@ -110,15 +110,11 @@ class Cliente extends CI_Controller {
 
     public function save(){
         $this->load->model('cliente_model');
-        if(isset($data_nasc)){
-            $data_nasc = $this->input->post('data_nasc');
-            //echo $data_nasc.'<br>';exit;
-            $data_nasc = DateTime::createFromFormat('d/m/Y', $data_nasc);
-            $data_nasc = $data_nasc->format('Y-m-d');
-            //$data_nasc = date('Y-m-d', strtotime(str_replace('-', '/', $data_nasc)));
-            //echo $data_nasc.'<br>';exit;
+        //var_dump($this->input->post('data_nasc'));exit;
+        if($this->input->post('data_nasc')){
+            $data_nasc = str_replace('/', '-', $this->input->post('data_nasc'));
         }else{
-            $data_nasc = '0000-00-00';
+            $data_nasc = '00/00/0000';
         }
         $sql_data = array(
             'nome'               => $this->input->post('nome'),

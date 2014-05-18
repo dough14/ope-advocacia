@@ -94,7 +94,7 @@ $this->template->menu(NULL);
                             <tr>
                                 <th class="center"></th>
                                 <th>Nome</th>
-                                <th>CPF</th>
+                                <th>CPF / CNPJ</th>
                                 <th>Data de Nascimento</th>
                                 <th>Data de Cadastro</th>
                                 <th>Ultima Atualização</th>
@@ -114,8 +114,12 @@ $this->template->menu(NULL);
                                     <a href="#">
                                         <?php echo $cliente['nome']; ?>
                                     </a></td>
+                            <?php if($cliente['cpf'] != 0): ?>
                                 <td><?php echo $cliente['cpf']; ?></td>
-                                <td><?php echo date('d/m/Y', strtotime($cliente['data_nasc'])); ?></td>
+                            <?php else: ?>
+                                <td><?php echo $cliente['cnpj']; ?></td>
+                            <?php endif ?>
+                                <td><?php $data_nasc = str_replace('-', '/', $cliente['data_nasc']); echo $data_nasc;?></td>
                                 <td><?php echo date('d/m/Y - H:i:s', strtotime($cliente['date_created'])); ?></td>
                                 <td><?php echo date("d/m/Y, g:i a", strtotime($cliente['updated_at'])); ?></td>
                                 <td class="center">

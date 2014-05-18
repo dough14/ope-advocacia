@@ -62,43 +62,25 @@ $this->template->menu('dashboard');
                 <div class="col-sm-4">
                     <div class="core-box">
                         <div class="heading">
-                            <i class="clip-user-4 circle-icon circle-green"></i>
-                            <h2>Manage Users</h2>
+                            <a href="cliente"><i class="clip-user-4 circle-icon circle-green"></i></a>
+                            <h2>Gestão de clientes</h2>
                         </div>
-                        <div class="content">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                        </div>
-                        <a class="view-more" href="#">
-                            View More <i class="clip-arrow-right-2"></i>
-                        </a>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="core-box">
                         <div class="heading">
-                            <i class="clip-clip circle-icon circle-teal"></i>
-                            <h2>Manage Orders</h2>
+                            <a href="calendar"><i class="clip-database circle-icon circle-bricky"></i></a>
+                            <h2>Centralização de eventos</h2>
                         </div>
-                        <div class="content">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                        </div>
-                        <a class="view-more" href="#">
-                            View More <i class="clip-arrow-right-2"></i>
-                        </a>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="core-box">
                         <div class="heading">
-                            <i class="clip-database circle-icon circle-bricky"></i>
-                            <h2>Manage Data</h2>
+                            <i class="fa fa-search circle-icon circle-teal"></i>
+                            <h2>Busca universal</h2>
                         </div>
-                        <div class="content">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                        </div>
-                        <a class="view-more" href="#">
-                            View More <i class="clip-arrow-right-2"></i>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -173,7 +155,7 @@ $this->template->menu('dashboard');
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <!--<div class="row">
                 <div class="col-sm-7">
                     <div class="panel panel-default">
                         <div class="panel-heading">

@@ -84,11 +84,11 @@ $this->template->menu('lawsuits');
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="col-sm-3 control-label">
-                                                    NB Nº <span class="symbol required"></span>
+                                                <label class="col-sm-6 control-label">
+                                                    Número do Benefício/Processo <span class="symbol required"></span>
                                                 </label>
-												<div class="col-sm-9">
-													<?php echo form_input(array('name'=>'code','value'=>$code,'class'=>'form-control required', 'placeholder'=>'Digite a NB', 'required'=>'')); ?>
+												<div class="col-sm-6">
+													<?php echo form_input(array('name'=>'code','value'=>$code,'class'=>'form-control required', 'placeholder'=>'Digite o NB', 'required'=>'')); ?>
 												</div>
                                             </div>
                                             <div class="form-group">
@@ -109,18 +109,18 @@ $this->template->menu('lawsuits');
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-3 control-label">
-                                                    ESP <span class="symbol required"></span>
+                                                    Espécie <span class="symbol required"></span>
                                                 </label>
 												<div class="col-sm-9">
-													<?php echo form_input(array('name'=>'type','value'=>$esp,'class'=>'form-control', 'required'=>'')) ?>
+													<?php echo form_input(array('name'=>'type','value'=>$esp,'class'=>'form-control',  'placeholder'=>'Digite a ESP','required'=>'')) ?>
 												</div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-sm-3 control-label">
-                                                    DER <span class="symbol required"></span>
+                                                <label class="col-sm-6 control-label">
+                                                    Data de entrada do requerimento <span class="symbol required"></span>
                                                 </label>
-												<div class="col-sm-9">
-													<?php echo form_input(array('name'=>'start_date','value'=>$startDate,'class'=>'form-control','data-mask'=>'dob', 'required'=>'')) ?>
+												<div class="col-sm-6">
+													<?php echo form_input(array('name'=>'start_date','value'=>$startDate,'class'=>'form-control','data-mask'=>'dob',  'placeholder'=>'Digite o DER', 'required'=>'')) ?>
 												</div>
                                             </div>
 											<div class="form-group">

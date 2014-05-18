@@ -138,7 +138,7 @@ $this->template->menu('clientes');
                                                 Data de Nascimento <span class="symbol required"></span>
                                             </label>
                                             <div class="col-sm-9">
-                                                <?php $data_nasc = date('d/m/Y', strtotime(str_replace('-', '/', $data_nasc))); ?>
+                                                <?php $data_nasc = str_replace('-', '/', $data_nasc); ?>
                                                 <?php echo form_input(array('name'=>'data_nasc','value'=>$data_nasc,'class'=>'form-control','data-mask'=>'dob', 'required'=>'')); ?>
                                             </div>
                                         </div>
