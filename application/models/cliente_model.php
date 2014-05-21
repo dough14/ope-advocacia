@@ -5,6 +5,7 @@ class Cliente_model extends CI_Model {
 
     public function get($id = false){
         if ($id) $this->db->where('id', $id);
+        $this->db->select("*, DATE_FORMAT(data_nasc, '%d/%m/%Y') as data_nasc", FALSE);
         $this->db->order_by('nome', 'asc')->where('deleted_at IS NULL', NULL)->where('cpf != 0');
         $get = $this->db->get('cliente');
         if($id) return $get->row_array();
@@ -24,18 +25,21 @@ class Cliente_model extends CI_Model {
 
     public function searchBy($field = NULL, $value = NULL){
         if( empty($field) || empty($value) ) return FALSE;
-
+//$this->db->where("date = DATE_FORMAT(data_nasc, '%d/%m/%Y')");
         if( is_array($field) && is_array($value) ){
             foreach( $field as $key => $_field ) $this->db->or_where($_field.' LIKE', '%'.$value[$key].'%');
+            $this->db->select("*, DATE_FORMAT(data_nasc, '%d/%m/%Y') as data_nasc", FALSE);
             $this->db->where('deleted_at != NULL');
             $this->db->where('deleted_at IS NULL');
             $this->db->order_by($field[0], 'asc');
         }elseif( is_array($field) ){
             foreach( $field as $key => $_field ) $this->db->or_where($_field.' LIKE', '%'.$value.'%');
+            $this->db->select("*, DATE_FORMAT(data_nasc, '%d/%m/%Y') as data_nasc", FALSE);
             $this->db->where('deleted_at IS NULL');
             $this->db->order_by($field[0], 'asc');
         }else{
             $this->db->where($field.' LIKE', '%'.$value.'%');
+            $this->db->select("*, DATE_FORMAT(data_nasc, '%d/%m/%Y') as data_nasc", FALSE);
             $this->db->where('deleted_at IS NULL');
             $this->db->order_by($field, 'asc');
         }
