@@ -119,12 +119,24 @@ $this->template->menu(NULL);
                             <?php else: ?>
                                 <td><?php echo $cliente['cnpj']; ?></td>
                             <?php endif ?>
-                                <td><?php $data_nasc = str_replace('-', '/', $cliente['data_nasc']); echo $data_nasc;?></td>
+                                <td><?php
+                                          $data_nasc = str_replace('-', '/', $cliente['data_nasc']);
+                                          if($data_nasc != '00/00/0000'){
+                                            echo $data_nasc;
+                                          }else{
+                                            echo 'Não possui!';
+                                          }
+                                    ?>
+                                </td>
                                 <td><?php echo date('d/m/Y - H:i:s', strtotime($cliente['date_created'])); ?></td>
                                 <td><?php echo date("d/m/Y, g:i a", strtotime($cliente['updated_at'])); ?></td>
                                 <td class="center">
                                     <div class="visible-md visible-lg hidden-sm hidden-xs">
-                                        <a href="<?php echo base_url('cliente/edit/'.$cliente['id']) ?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar"><i class="fa fa-edit"></i></a>
+                                        <?php if($cliente['cpf'] != 0): ?>
+                                            <a href="<?php echo base_url('cliente/edit/'.$cliente['id']) ?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar"><i class="fa fa-edit"></i></a>
+                                        <?php else: ?>
+                                            <a href="<?php echo base_url('cliente/edit/'.$cliente['id'].'?view=pj') ?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar"><i class="fa fa-edit"></i></a>
+                                        <?php endif ?>
                                         <a href="<?php echo base_url('cliente/remove/'.$cliente['id']) ?>" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remover"><i class="fa fa-times fa fa-white"></i></a>
                                     </div>
                                     <div class="visible-xs visible-sm hidden-md hidden-lg">
