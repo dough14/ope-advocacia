@@ -4,8 +4,12 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class calendar_model extends CI_Model {
 
 	public function calendar(){
-
-        $query = $this->db->get('calendar');
+		$this->db->select('calendar.*, user.color AS color')
+			 ->from('calendar')
+			 ->join('user', 'user.id = calendar.user_fk', 'left');
+        
+		$query = $this->db->get();
+		
         $events = array();
         //var_dump($query->result());exit;
         foreach($query->result() as $event){

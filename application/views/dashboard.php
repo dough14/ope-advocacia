@@ -102,20 +102,19 @@ $this->template->menu('dashboard');
                                                 $startDate = new DateTime($event->startDate);
                                                 //var_dump($event);
                                                 $_startMonth = new DateInterval('P1M');
-                                                $startDate->sub($_startMonth);
                                                 $_startMonth = $startDate->format('m');
                                             ?>
                                             {   allDay: false,
+												color: '<?php echo $event->color ?>',
                                                 title: '<?php echo $event->title ?>',
-                                                start: new Date('<?php echo $startDate->format('Y-m-d h:i:s') ?>'),
+                                                start: new Date('<?php echo $startDate->format('Y-m-d H:i:s') ?>'),
                                                 <?php if( !empty($event->endDate) ): ?>
                                                 <?php
                                                     $endDate   = new DateTime($event->endDate);
                                                     $_endMonth = new DateInterval('P1M');
-                                                    $endDate->sub($_endMonth);
                                                     $_endMonth = $endDate->format('m');
                                                 ?>
-                                                end: new Date('<?php echo $endDate->format('Y-m-d h:i:s') ?>'),
+                                                end: new Date('<?php echo $endDate->format('Y-m-d H:i:s') ?>'),
                                                 <?php endif ?>
                                             },
                                             <?php endforeach ?>

@@ -115,8 +115,8 @@ $this->template->menu('calendar');
 												<?php echo $event->title; ?>
 											</a>
 										</td>
-										<td><?php echo date("d/m/Y h:i:s", strtotime($event->startDate)); ?></td>
-										<td><?php echo date("d/m/Y h:i:s", strtotime($event->endDate)); ?></td>
+										<td><?php echo date("d/m/Y H:i:s", strtotime($event->startDate)); ?></td>
+										<td><?php echo date("d/m/Y H:i:s", strtotime($event->endDate)); ?></td>
 										<td><?php echo $event->status ? 'Ativo' : 'Inativo' ?></td>
 										<td class="center">
 											<div class="visible-md visible-lg hidden-sm hidden-xs">
