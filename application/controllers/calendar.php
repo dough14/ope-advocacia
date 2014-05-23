@@ -49,8 +49,8 @@ class Calendar extends CI_Controller {
 			array( 'label' => 'Calendário', 'url' => base_url('calendar') ),
 			array( 'label' => 'Adicionar Evento', 'active' => TRUE )
 		);
-		$data['search'] = getSearch();
-		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
+		$data['search']             = getSearch();
+		$data['breadcrumbs']        = generateBreadcrumbs($breadcrumbs);
         $data['page_title']         = "Novo evento";
         $data['startDate']          = '';
         $data['endDate']            = '';
@@ -74,19 +74,12 @@ class Calendar extends CI_Controller {
 		);
 		
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
-		$data['search'] = getSearch();
+		$data['search']      = getSearch();
 		//TODO
 
-        $data['search'] = getSearch();
+        $data['search']      = getSearch();
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
-        $data['page_title']         = "Editar evento";
-        $data['startDate']          = $data['startDate'];
-        $data['endDate']            = $data['endDate'];
-        $data['title']              = $data['title'];
-        $data['last_user_update']   = $data['last_user_update'];
-        $data['last_update']        = $data['last_update'];
-        $data['user_fk']            = $data['user_fk'];
-
+        $data['page_title']  = "Editar evento";
 
         $this->template->show('calendar_add', $data);
     }
@@ -94,12 +87,34 @@ class Calendar extends CI_Controller {
     public function save(){
         $this->load->model('calendar_model');
 
-        $startDate = $this->input->post('startDate');
+        /*$startDate = $this->input->post('startDate');
         $startDate = date('Y-m-d h:i:s', strtotime(str_replace('-', '/', $startDate)));
 
         $endDate = $this->input->post('endDate');
         $endDate = date('Y-m-d h:i:s', strtotime(str_replace('-', '/', $endDate)));
-        //echo $data_nasc.'<br>';
+        */
+
+        if($this->input->post('startDate')){
+            $startDate = $this->input->post('startDate');
+            //echo $data_nasc.'<br>';exit;
+            $startDate = DateTime::createFromFormat('d/m/Y H:i:s', $startDate);
+            $startDate = $startDate->format('Y-m-d H:i:s');
+            //$startDate = date('Y-m-d', strtotime(str_replace('-', '/', $startDate)));
+            //echo $startDate.'<br>';exit;
+        }else{
+            $startDate = '0000-00-00 00:00:00';
+        }
+
+        if($this->input->post('endDate')){
+            $endDate = $this->input->post('endDate');
+            //echo $data_nasc.'<br>';exit;
+            $endDate = DateTime::createFromFormat('d/m/Y H:i:s', $endDate);
+            $endDate = $endDate->format('Y-m-d H:i:s');
+            //$endDate = date('Y-m-d', strtotime(str_replace('-', '/', $endDate)));
+            //echo $endDate.'<br>';exit;
+        }else{
+            $endDate = '0000-00-00 00:00:00';
+        }
 
         $sql_data = array(
             'user_fk'              => $this->input->post('user_fk'),
