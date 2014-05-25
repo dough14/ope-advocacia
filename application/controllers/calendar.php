@@ -24,16 +24,17 @@ class Calendar extends CI_Controller {
     public function index(){
 
         $this->load->model('calendar_model');
-		
+        $this->load->model('lawsuit_model');
 		$breadcrumbs = array(
 			array( 'label' => 'Painel de controle', 'url' => base_url() ),
 			array( 'label' => 'Calendário', 'active' => TRUE )
 		);
 		
-		$data['search'] = getSearch();
+		$data['search']      = getSearch();
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
         $data['page_title']  = "Calendar";
         $data['events']      =  $this->calendar_model->calendar();
+        $data['lawsuits']    = $this->lawsuit_model->get(false);
        // $this->load->model('calendar_model');
         // Load View
         $this->template->show('calendar', $data);
@@ -42,13 +43,21 @@ class Calendar extends CI_Controller {
 
     public function add(){
         //TODO
-        $user = $this->session->userdata('user');
+        //$user = $this->session->userdata('user');
+        $this->load->model('calendar_model');
+        $this->load->model('user_model');
+
 		
 		$breadcrumbs = array(
 			array( 'label' => 'Painel de controle', 'url' => base_url() ),
 			array( 'label' => 'Calendário', 'url' => base_url('calendar') ),
 			array( 'label' => 'Adicionar Evento', 'active' => TRUE )
 		);
+
+        $users = $this->user_model->get();
+        $data['lawyers'] = array( '' => 'Selecione um advogado...' );
+        foreach( $users as $user ) $data['lawyers'][$user['id']] = $user['nome'];
+
 		$data['search']             = getSearch();
 		$data['breadcrumbs']        = generateBreadcrumbs($breadcrumbs);
         $data['page_title']         = "Novo evento";
@@ -58,13 +67,14 @@ class Calendar extends CI_Controller {
         $data['last_user_update']   = '';
         $data['last_update']        = '';
         $data['user_fk']            = $user;
-
+        //$data['lawyer']
 
         $this->template->show('calendar_add', $data);
     }
 	
 	public function edit($id){
 		$this->load->model('calendar_model');
+        $this->load->model('user_model');
         $data = $this->calendar_model->get($id);
 		
         $breadcrumbs = array(
@@ -72,7 +82,11 @@ class Calendar extends CI_Controller {
 			array( 'label' => 'Calendário', 'url' => base_url('calendar') ),
 			array( 'label' => 'Adicionar Evento', 'active' => TRUE )
 		);
-		
+
+        $users = $this->user_model->get();
+        $data['lawyers'] = array( '' => 'Selecione um advogado...' );
+        foreach( $users as $user ) $data['lawyers'][$user['id']] = $user['nome'];
+
 		$data['breadcrumbs'] = generateBreadcrumbs($breadcrumbs);
 		$data['search']      = getSearch();
 		//TODO
@@ -117,7 +131,7 @@ class Calendar extends CI_Controller {
         }
 
         $sql_data = array(
-            'user_fk'              => $this->input->post('user_fk'),
+            'user_fk'              => $this->input->post('user_id'),
             'title'                => $this->input->post('title'),
             //'status'               => $this->input->post('status'),
             //'last_user_update'     => $this->input->post('last_user_update'),

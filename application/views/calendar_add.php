@@ -101,6 +101,14 @@ $this->template->menu('users');
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-4 control-label">
+                                                    Advogado <span class="symbol required"></span>
+                                                </label>
+                                                <div class="col-sm-8">
+                                                    <?php echo form_dropdown('user_id', $lawyers, $user_fk, 'class="form-control"') ?>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">
                                                     Título do evento <span class="symbol required"></span>
                                                 </label>
 												<div class="col-sm-8">
@@ -108,7 +116,6 @@ $this->template->menu('users');
 												</div>
                                             </div>
                                         </div>
-                                        <td class="hide"><?php echo form_input('user_fk', $user_fk, 'class="hide"'); ?></td>
                                         <?php if (isset($id)){
                                             echo form_hidden('id', $id);
                                         } ?>
