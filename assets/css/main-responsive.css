@@ -27,6 +27,7 @@
 /*	From Small Devices Up To Medium Devices
  /* ---------------------------------------------------------------------- */
 @media (min-width: 768px) and (max-width: 979px) {
+    /*PERSONALIZED*/
 	.layout-boxed > .navbar, .layout-boxed .main-container, .layout-boxed > .footer {
 		max-width: 750px !important;
 	}
@@ -142,6 +143,10 @@
 /*	Extra Small Devices Only
  /* ---------------------------------------------------------------------- */
 @media (max-width: 767px) {
+    /*PERSONALIZED*/
+    .no-border-xs{
+        border: none;
+    }
 	.main-navigation {
 		max-height: 340px !important;
 	}

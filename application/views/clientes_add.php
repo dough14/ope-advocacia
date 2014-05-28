@@ -98,7 +98,7 @@ $this->template->menu('clientes');
                                             Nome <?php if(isset($_GET["view"])) echo ' Fantasia';?><span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-9">
-											<?php echo form_input(array('name'=>'nome','value'=>$nome,'class'=>'form-control', 'required'=>'')); ?>
+											<?php echo form_input(array('name'=>'nome','value'=>$nome,'class'=>'form-control', 'required'=>'', 'size'=>'200')); ?>
 										</div>
                                     </div>
                                     <?php if(isset($_GET["view"])): ?>
@@ -182,7 +182,7 @@ $this->template->menu('clientes');
                                             Contatar:
                                         </label>
                                         <div class="col-sm-9">
-                                            <?php echo form_input(array('name'=>'contatar','value'=>$contatar,'class'=>'form-control')); ?>
+                                            <?php echo form_input(array('name'=>'contatar','value'=>$contatar,'class'=>'form-control', 'size'=>'100')); ?>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -190,7 +190,7 @@ $this->template->menu('clientes');
                                             Endereço <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-9">
-											<?php echo form_input(array('name'=>'endereco','value'=>$endereco,'class'=>'form-control', 'required'=>'')); ?>
+											<?php echo form_input(array('name'=>'endereco','value'=>$endereco,'class'=>'form-control', 'required'=>'', 'size'=>'400')); ?>
 										</div>
                                     </div>
 

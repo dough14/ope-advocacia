@@ -71,8 +71,7 @@ $this->template->menu('clientes');
                     <i class="fa fa-external-link-square"></i>
                     Lista de clientes - PJ
                     <div class="panel-tools">
-                        <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-                        </a>
+                        <a class="btn btn-xs btn-link panel-collapse collapses" href="#"></a>
                         <a class="btn btn-xs btn-link panel-expand" href="#">
                             <i class="fa fa-resize-full"></i>
                         </a>

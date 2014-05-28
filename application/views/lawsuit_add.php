@@ -88,7 +88,7 @@ $this->template->menu('lawsuits');
                                                     Número do Benefício/Processo <span class="symbol required"></span>
                                                 </label>
 												<div class="col-sm-6">
-													<?php echo form_input(array('name'=>'code','value'=>$code,'class'=>'form-control required', 'placeholder'=>'Digite o NB', 'required'=>'')); ?>
+													<?php echo form_input(array('name'=>'code','value'=>$code,'class'=>'form-control required', 'placeholder'=>'Digite o NB', 'required'=>'', 'size'=>'30')); ?>
 												</div>
                                             </div>
                                             <div class="form-group">
@@ -112,7 +112,7 @@ $this->template->menu('lawsuits');
                                                     Espécie <span class="symbol required"></span>
                                                 </label>
 												<div class="col-sm-9">
-													<?php echo form_input(array('name'=>'type','value'=>$esp,'class'=>'form-control',  'placeholder'=>'Digite a ESP','required'=>'')) ?>
+													<?php echo form_input(array('name'=>'type','value'=>$esp,'class'=>'form-control',  'placeholder'=>'Digite a ESP','required'=>'', 'size'=>'30')) ?>
 												</div>
                                             </div>
                                             <div class="form-group">

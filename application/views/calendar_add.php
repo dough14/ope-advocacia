@@ -112,7 +112,7 @@ $this->template->menu('users');
                                                     Título do evento <span class="symbol required"></span>
                                                 </label>
 												<div class="col-sm-8">
-													<?php echo form_input(array('name'=>'title', 'value'=>$title, 'class'=>'form-control', 'required'=>'')); ?>
+													<?php echo form_input(array('name'=>'title', 'value'=>$title, 'class'=>'form-control', 'required'=>'', 'size'=>'150')); ?>
 												</div>
                                             </div>
                                         </div>

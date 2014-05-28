@@ -57,8 +57,12 @@
 <body class="footer-fixed">
 <?php endif ?>
 <!-- start: HEADER -->
-<div class="navbar navbar-inverse navbar-fixed-top hidden-xs">
-    <a style="float:left; width:175px;" href="<?php echo base_url('dashboard'); ?>"><img src="<?php echo base_url() ?>assets/images/logo.png"></a>
-    <!-- start: NOTIFICATION DROPDOWN -->
+<div class="navbar navbar-inverse navbar-fixed-top no-border-xs">
+    <a style="float:left; width:175px;" class="hidden-xs" href="<?php echo base_url('dashboard'); ?>"><img src="<?php echo base_url() ?>assets/images/logo.png"></a>
+    <!-- start: RESPONSIVE MENU TOGGLER -->
+    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+        <span class="clip-list-2"></span>
+    </button>
+    <!-- end: RESPONSIVE MENU TOGGLER -->
 </div>
 <!-- end: HEADER -->

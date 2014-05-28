@@ -91,7 +91,7 @@
                                                     Nome <span class="symbol required"></span>
                                                 </label>
                                                 <div class="col-sm-9">
-                                                    <?php echo form_input(array('name'=>'nome','value'=>$nome,'class'=>'form-control', 'required'=>'')); ?>
+                                                    <?php echo form_input(array('name'=>'nome','value'=>$nome,'class'=>'form-control', 'required'=>'', 'size'=>'200')); ?>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -104,10 +104,10 @@
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-3 control-label">
-                                                    Email
+                                                    Email <span class="symbol required"></span>
                                                 </label>
                                                 <div class="col-sm-9">
-                                                    <?php echo form_input(array('name'=>'email','value'=>$email,'class'=>'form-control', 'required'=>'')); ?>
+                                                    <?php echo form_input(array('name'=>'email','value'=>$email,'class'=>'form-control', 'required'=>'', 'size'=>'200', 'type'=>'email')); ?>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -124,7 +124,7 @@
                                                     Login <span class="symbol required"></span>
                                                 </label>
                                                 <div class="col-sm-9">
-                                                    <?php echo form_input(array('name'=>'login','value'=>$login,'class'=>'form-control', 'required'=>'')); ?>
+                                                    <?php echo form_input(array('name'=>'login','value'=>$login,'class'=>'form-control', 'required'=>'', 'size'=>'40')); ?>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -133,10 +133,10 @@
                                                 </label>
 												<div class="col-sm-9">
 													<?php if (isset($id)) { ?>
-														<?php echo form_password(array('name'=>'password', 'value'=>$password, 'id'=>'password','disabled'=>'disabled','class'=>'form-control')); ?>
+														<?php echo form_password(array('name'=>'password', 'value'=>$password, 'id'=>'password','disabled'=>'disabled','class'=>'form-control', 'size'=>'20')); ?>
 														<?php echo form_checkbox(array('name'=>'reset_password','value'=>1,'id'=>'reset_password','title'=>'Edit Password','class'=>'form-control')); ?>
 													<?php } else { ?>
-														<?php echo form_password(array('name'=>'password','value'=>$password,'id'=>'password','class'=>'form-control', 'required'=>'')); ?>
+														<?php echo form_password(array('name'=>'password','value'=>$password,'id'=>'password','class'=>'form-control', 'required'=>'', 'size'=>'20')); ?>
 														<?php echo form_hidden('reset_password', 1); ?>
 													<?php } ?>
 												</div>

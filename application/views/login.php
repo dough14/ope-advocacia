@@ -18,9 +18,12 @@
             </p>
             <?php if(isset($already_installed) && !$already_installed) { echo form_open('install/run', 'class="form-login"'); }
             else { echo form_open('login/validate', 'class="form-login"'); } ?>
-                <div class="errorHandler alert alert-danger no-display">
-                    <i class="fa fa-remove-sign"></i> Confira os erros abaixo.
+            <?php $url = current_url(); ?>
+            <?php if(strpos($url, 'login/validate') !== FALSE): ?>
+                <div class="errorHandler alert alert-danger">
+                    <i class="fa fa-remove-sign"></i> Usuário ou senha inválidos.
                 </div>
+            <?php endif ?>
                 <fieldset>
                     <div class="form-group">
                         <span class="input-icon">
