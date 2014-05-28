@@ -111,9 +111,14 @@ $this->template->menu(NULL);
                                         </label>
                                     </div></td>
                                 <td>
-                                    <a href="#">
+                                    <?php if($cliente['cpf'] != 0): ?>
+                                        <a href="<?php echo base_url('cliente/edit/'.$cliente['id']) ?>">
+                                    <?php else: ?>
+                                        <a href="<?php echo base_url('cliente/edit/'.$cliente['id'].'?view=pj') ?>">
+                                    <?php endif ?>
                                         <?php echo $cliente['nome']; ?>
-                                    </a></td>
+                                    </a>
+                                </td>
                             <?php if($cliente['cpf'] != 0): ?>
                                 <td><?php echo $cliente['cpf']; ?></td>
                             <?php else: ?>
@@ -146,7 +151,11 @@ $this->template->menu(NULL);
                                             </a>
                                             <ul role="menu" class="dropdown-menu pull-right">
                                                 <li role="presentation">
-                                                    <a role="menuitem" tabindex="-1" href="<?php echo base_url('cliente/edit/'.$cliente['id']) ?>">
+                                                    <?php if($cliente['cpf'] != 0): ?>
+                                                        <a role="menuitem" tabindex="-1" href="<?php echo base_url('cliente/edit/'.$cliente['id']) ?>">
+                                                    <?php else: ?>
+                                                        <a role="menuitem" tabindex="-1" href="<?php echo base_url('cliente/edit/'.$cliente['id'].'?view=pj') ?>">
+                                                    <?php endif ?>
                                                         <i class="fa fa-edit"></i> Editar
                                                     </a>
                                                 </li>
