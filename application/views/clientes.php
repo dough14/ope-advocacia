@@ -102,7 +102,7 @@ $this->template->menu('clientes');
                                         </label>
                                     </div></td>
                                 <td>
-                                    <a href="<?php echo base_url('cliente/edit/'.$clientepj['id']) ?>">
+                                    <a href="<?php echo base_url('cliente/edit/'.$clientepj['id'].'?view=pj') ?>">
                                         <?php echo $clientepj['nome']; ?>
                                     </a></td>
                                 <td><?php echo $clientepj['cnpj']; ?></td>
