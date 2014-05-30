@@ -85,7 +85,7 @@ $this->template->menu('dashboard');
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-7">
+                <div class="col-sm-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <i class="clip-calendar"></i>
