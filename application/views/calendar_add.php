@@ -104,7 +104,7 @@ $this->template->menu('users');
                                                     Advogado <span class="symbol required"></span>
                                                 </label>
                                                 <div class="col-sm-8">
-                                                    <?php echo form_dropdown('user_id', $lawyers, $user_fk, 'class="form-control"') ?>
+                                                    <?php echo form_dropdown('user_id', $lawyers, '', 'class="form-control"') ?>
                                                 </div>
                                             </div>
                                             <div class="form-group">
