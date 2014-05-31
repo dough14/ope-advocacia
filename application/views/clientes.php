@@ -84,7 +84,7 @@ $this->template->menu('clientes');
                     <table class="table table-bordered table-hover" id="sample-table-1">
                         <thead>
                         <tr>
-                            <th class="center"></th>
+                            <th class="center hidden-xs"></th>
                             <th>Nome</th>
                             <th>CNPJ</th>
                             <th class="hidden-xs">Data de Cadastro</th>
@@ -95,7 +95,7 @@ $this->template->menu('clientes');
                         <tbody>
                         <?php foreach ($clientespj as $clientepj) : ?>
                             <tr id="cliente_<?php echo $clientepj['id']; ?>">
-                                <td class="center">
+                                <td class="center hidden-xs">
                                     <div class="checkbox-table">
                                         <label>
                                             <input type="checkbox" class="flat-grey">
@@ -165,10 +165,10 @@ $this->template->menu('clientes');
                     <table class="table table-bordered table-hover" id="sample-table-1">
                         <thead>
                         <tr>
-                            <th class="center"></th>
+                            <th class="center hidden-xs"></th>
                             <th>Nome</th>
                             <th>CPF</th>
-                            <th>Data de Nascimento</th>
+                            <th class="hidden-xs">Data de Nascimento</th>
                             <th class="hidden-xs">Data de Cadastro</th>
                             <th class="hidden-xs">Ultima Atualização</th>
                             <th>Ações</th>
@@ -177,7 +177,7 @@ $this->template->menu('clientes');
                         <tbody>
                         <?php foreach ($clientes as $cliente) : ?>
                             <tr  id="cliente_<?php echo $cliente['id']; ?>">
-                                <td class="center">
+                                <td class="center hidden-xs">
                                     <div class="checkbox-table">
                                         <label>
                                             <input type="checkbox" class="flat-grey">
@@ -188,7 +188,7 @@ $this->template->menu('clientes');
                                         <?php echo $cliente['nome']; ?>
                                     </a></td>
                                 <td><?php echo $cliente['cpf']; ?></td>
-                                <td><?php echo date("d/m/Y", strtotime($cliente['data_nasc'])); ?></td>
+                                <td class="hidden-xs"><?php echo date("d/m/Y", strtotime($cliente['data_nasc'])); ?></td>
                                 <td class="hidden-xs"><?php echo date("d/m/Y, g:i a", strtotime($cliente['date_created'])); ?></td>
                                 <td class="hidden-xs"><?php echo date("d/m/Y, g:i a", strtotime($cliente['updated_at'])); ?></td>
                                 <td class="center">
