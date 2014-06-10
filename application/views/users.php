@@ -82,7 +82,7 @@
                                         <th class="center"></th>
                                         <th>Nome</th>
                                         <th>Login</th>
-                                        <th>Foto</th>
+                                        <!-- <th>Foto</th> -->
                                         <th>Nível de Acesso</th>
                                         <th>Data de Cadastro</th>
                                         <th>Ações</th>
@@ -107,11 +107,11 @@
                                                     <?php echo $user['login']; ?>
                                                 </a>
                                             </td>
-                                            <td>FOTO</td>
+                                            <!-- <td>FOTO</td> -->
                                             <td><?php echo $level_list[$user['level']]; ?></td>
                                             <td><?php echo date("d/m/Y, g:i a", strtotime($user['date_created'])); ?></td>
                                             <td class="center">
-                                                <div class="visible-md visible-lg hidden-sm hidden-xs">
+                                                <div>
                                                     <a href="<?php echo base_url('user/edit/'.$user['id']) ?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar"><i class="fa fa-edit"></i></a>
                                                     <a href="<?php echo base_url('user/remove/'.$user['id']) ?>" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remover"><i class="fa fa-times fa fa-white"></i></a>
                                                 </div>

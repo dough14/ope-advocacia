@@ -96,7 +96,7 @@ $this->template->menu('calendar');
 									<th>Título</th>
 									<th>Data Inicial</th>
 									<th>Data Final</th>
-									<th>Status</th>
+									<!-- <th>Status</th> -->
 									<th>Ações</th>
 								</tr>
 							</thead>
@@ -117,9 +117,9 @@ $this->template->menu('calendar');
 										</td>
 										<td><?php echo date("d/m/Y H:i:s", strtotime($event->startDate)); ?></td>
 										<td><?php echo date("d/m/Y H:i:s", strtotime($event->endDate)); ?></td>
-										<td><?php echo $event->status ? 'Ativo' : 'Inativo' ?></td>
+										<!-- <td><?php echo $event->status ? 'Ativo' : 'Inativo' ?></td> -->
 										<td class="center">
-											<div class="visible-md visible-lg hidden-sm hidden-xs">
+											<div class="">
 												<a href="<?php echo base_url('calendar/edit/'.$event->id) ?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar"><i class="fa fa-edit"></i></a>
 												<a href="<?php echo base_url('calendar/remove/'.$event->id) ?>" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remover"><i class="fa fa-times fa fa-white"></i></a>
 											</div>
