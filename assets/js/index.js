@@ -2,7 +2,7 @@ var Index = function () {
     // function to initiate Chart 1
     var runChart1 = function () {
         function randValue() {
-            return (Math.floor(Math.random() * (1 + 40 - 20))) + 20;
+            return; /* (Math.floor(Math.random() * (1 + 40 - 20))) + 20;*/
         };
         var pageviews = [
             [1, randValue()],
@@ -68,7 +68,7 @@ var Index = function () {
             [29, 27 + randValue()],
             [30, 31 + randValue()]
         ];
-        var plot = $.plot($("#placeholder-h1"), [{
+        var plot = $.plot($("/*#placeholder-h1*/"), [{
             data: pageviews,
             label: "Unique Visits"
         }, {
@@ -449,12 +449,12 @@ var Index = function () {
     };
     return {
         init: function () {
-            runChart1();
+            /*runChart1();
             runChart2();
             runChart3();
             runSparkline();
             runEasyPieChart();
-            runFullCalendar();
+            runFullCalendar();*/
         }
     };
 }();

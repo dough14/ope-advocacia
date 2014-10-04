@@ -138,13 +138,12 @@ class Calendar extends CI_Controller {
             'startDate'            => $startDate,
             'endDate'              => $endDate
         );
-
-
         if ($this->input->post('id')){
             $this->calendar_model->update($this->input->post('id'),$sql_data);
         }else{
             $this->calendar_model->create($sql_data);
         }
+        $this->output->enable_profiler(TRUE);
 
         redirect('calendar');
     }

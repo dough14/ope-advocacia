@@ -31,8 +31,15 @@ class calendar_model extends CI_Model {
 	}
 	
 	public function create($data){
+        //var_dump($data);exit;
+        $save = $this->db->insert('calendar', $data);
 
-        return $this->db->insert('calendar', $data);
+        if($save == true){
+            return true;
+        }else{
+            return false;
+        }
+        //return $this->db->insert('calendar', $data);
 	}
 
     public function update($id, $data){

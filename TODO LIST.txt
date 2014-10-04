@@ -1,6 +1,0 @@
-TODO
-
-cadastro de clientes // usuarios finalizar 
-
-controller/user.php -> passar todos campos necessários para serem inseridos no banco de dados e no cógido para processar as informações
-

@@ -121,11 +121,11 @@ $this->template->menu('clientes');
                                             <td><?php echo date('d/m/Y', strtotime($lawsuit['start_date'])); ?></td>
                                             <td align="center"><p class="btn btn-xs" style="background-color: <?php echo $lawsuit['status_color'] ?>; padding: 3px 10px 3px 10px; color: #FFF; width: 100%; text-align: center;"><?php echo $lawsuit['status']; ?></p></td>
                                             <td class="center">
-                                                <div class="visible-md visible-lg hidden-sm hidden-xs">
+                                                <div class="hidden-md visible-lg hidden-sm hidden-xs">
                                                     <a href="<?php echo base_url('lawsuit/edit/'.$lawsuit['id']) ?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar"><i class="fa fa-edit"></i></a>
                                                     <a href="<?php echo base_url('lawsuit/remove/'.$lawsuit['id']) ?>" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remover"><i class="fa fa-times fa fa-white"></i></a>
                                                 </div>
-                                                <div class="">
+                                                <div class="visible-sm visible-xs visible-md">
                                                     <div class="btn-group">
                                                         <a class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
                                                             <i class="fa fa-cog"></i> <span class="caret"></span>
